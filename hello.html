@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<meta charset="UTF-8">
+
+<head>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>東京国際武術節にようこそ</title>
+  <style>
+	html {
+		-ms-touch-action:manipulation;
+		touch-action:manipulation;
+	}
+	p, li {
+	  font:
+	    'ＭＳＰゴシック',
+	    sans-serif;
+	}
+	li a {
+		font-size: 1.5em;
+	    font-weight: bold;
+		cursor: pointer;
+		text-decoration:underline;
+		text-decoration-color:darkgreen;
+	}
+  </style>
+</head>
+
+
+<body>
+
+<p>改訂内容(Ver=2.3?) 2023/??/??</p>
+
+<p id="help">
+  1.非公開の個人を設定可能とした<br />
+  2.成績表の「×」->「◄」とした<br />
+  3.開始予定時刻をボールドで表現した<br />
+  4.<br />
+  -- ↓Ver=2.30↓ ---------------------------------<br />
+  1.中国語を徐さん監修で表現した<br />
+  2.英語を張さん監修で表現した<br />
+  3.メニュー等、若干の位置調整をした<br />
+  4.ボタン「拡大」->「＋」、「縮小」->「－」とした<br />
+  5.日本以外は読みをローマ字表記とした<br />
+  6.各種ボタンをアクティブ時のみ反転とした<br />
+</p>
+
+<li ><a onClick="javascript:do_next(1);">成績表のメニューを開く</a></li>
+
+<script>
+
+function device()
+{
+	var ua = navigator.userAgent;
+	if ( ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || (ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0) ){
+		return 'mobile';
+	}
+	else{
+		if (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0){
+			return 'tablet';
+		}
+		else{
+			return 'desktop';
+		}
+	}
+}
+
+
+window.addEventListener('load', function(){
+	var wo = device();
+	var width = window.innerWidth;
+	var moji_width = width / 24;	// 24文字表示のための１文字のpxサイズ
+	if ( wo == "tablet" ){
+		moji_width = width / 48;
+	}
+	if ( wo == "desktop" ){
+		moji_width = 16;
+	}
+	var x = moji_width / 16;	// 基本16pxが１文字
+    document.body.style.fontSize = x + 'rem';
+
+	if ( wo == "mobile" ){
+		let contents = document.getElementById("help");
+		moji_width = width / 28;
+		x = moji_width / 16;
+    	contents.body.style.fontSize = x + 'rem';
+	}
+
+});
+
+function do_next(type){
+	if ( type == 1 ){
+		let day = Date.now();
+		window.open("index.html" + "?" + day);
+		return;
+	}
+}
+
+</script>
+
+</body>
+</html>
