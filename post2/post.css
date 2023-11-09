@@ -1,0 +1,63 @@
+html {
+    -ms-touch-action:manipulation;
+    touch-action:manipulation;
+}
+body {
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+.batsu{
+    font-size: 100%;
+    font-weight: bold;
+    border: 1px solid #999;
+    color: #999;
+    cursor: pointer;
+}
+.batsu:hover{
+    background: #333;
+    border-color: #333;
+    color: #FFF;
+}
+
+trid {
+    display:none;
+}
+td, th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 10px;
+}
+td {
+    text-align: center;
+	word-break: keep-all;
+}
+tr:nth-child(even) {
+    background-color: #eee;
+}
+tr[scope='col'] {
+    background-color: #696969;
+    color: #fff;
+}
+tr[scope='wo'] {
+	color: darkblue;
+    font-size:  120%;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #a9a9a9,2px 2px 0 #666;  /* 影を2重に指定 */
+}
+caption {
+    padding: 10px;
+    caption-side: top;
+    font-size: 120%;
+    font-weight: bold;
+}
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: 1.0rem;
+
+	max-width:1300px;
+	width:100%;
+	min-width:750px;
+}
+
