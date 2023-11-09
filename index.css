@@ -1,0 +1,151 @@
+html {
+    touch-action:manipulation;
+    -ms-touch-action:manipulation;
+    -webkit-touch-action:manipulation;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+body {
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%; /* Safari */
+}
+
+li {
+	list-style-type: none;
+}
+
+ul {
+	list-style-type: none;
+}
+ul a:active {
+	font-weight: bold;
+}
+
+p0, p2, p4 {
+  display: none;
+}
+p1 {
+  display: inline;
+}
+p3 {
+	animation-name: textanime;/*keyname*/
+	animation-duration:1.5s;/*çƒê∂éûä‘*/
+	animation-iteration-count:1;/*åJÇËï‘Çµ*/
+}
+
+@keyframes textanime {
+	0% {
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+.batsu{
+    font-size: 100%;
+    font-weight: bold;
+    border: 1px solid #999;
+    color: #999;
+    cursor: pointer;
+}
+.batsu:hover{
+    background: #333;
+    border-color: #333;
+    color: #FFF;
+}
+
+.plus{
+    font-size: 100%;
+    font-weight: bold;
+    border: 1px solid #999;
+    color: red;
+    cursor: pointer;
+}
+.plus:active{
+    background: crimson;
+    border-color: crimson;
+    color: #FFF;
+}
+
+.minus{
+    font-size: 100%;
+    font-weight: bold;
+    border: 1px solid #999;
+    color: blue;
+    cursor: pointer;
+}
+.minus:active{
+    background: darkblue;
+    border-color: darkblue;
+    color: #FFF;
+}
+
+.bhelp{
+    font-size: 100%;
+    font-weight: bold;
+    border: 1px solid #999;
+    color: green;
+    cursor: pointer;
+}
+.bhelp:active{
+    background: green;
+    border-color: darkgreen;
+    color: #FFF;
+}
+
+.man {
+    cursor: pointer;
+	white-space: nowrap;
+    color: midnightblue;
+}
+
+.woman {
+    cursor: pointer;
+	white-space: nowrap;
+    color: black;
+}
+
+.baseM {
+    cursor: pointer;
+	white-space: nowrap;
+}
+
+.offM, .onM {
+    cursor: pointer;
+	white-space: nowrap;
+	padding:0.5em;
+	list-style-type:none;
+	line-height:0.3;
+}
+.offM a, .onM a {
+	position:relative;
+	padding: 0em 0.3em 0.3em 1.0em;
+}
+.offM a::before {
+	position: absolute;
+	content: '';
+	display: block;
+	top: 0.32em;
+	left: 0;
+	width: 0.4em;
+	height: 0.4em;
+	border-right: 0.2em solid lightslategray;
+	border-bottom: 0.2em solid lightslategray;
+	transform: rotate(-45deg);
+}
+.onM a::before {
+	position: absolute;
+	content: '';
+	display: block;
+	top: 0.22em;
+	left: 0;
+	width: 0.4em;
+	height: 0.4em;
+	border-right: 0.2em solid lightslategray;
+	border-bottom: 0.2em solid lightslategray;
+	transform: rotate(45deg);
+}
+
