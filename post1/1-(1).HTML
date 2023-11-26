@@ -5,12 +5,13 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>競技進行表</title>
-  <link rel="stylesheet" href="post.css?ver=2.31">
+  <title>成績表</title>
+  <link rel="stylesheet" href="post.css?ver=2.32">
 </head>
 
 <body>
 <Input type="button" onClick="javascript:do_next(0);" value="◄" class="batsu">
+<Input type="button" onClick="javascript:do_next(2);" value="採点詳細へ" class="batsu">
 <div>
 <tr>
   <td>第４回　東京国際武術節</td>
@@ -22,9 +23,6 @@
 <tr>
   <td>第１コート</td>
   <td>（１）</td>
-  <td>&emsp;&emsp;</td>
-  <td><mark>０９：３０</mark></td>
-  <td>開始予定</td>
 </tr>
 </div>
 <table>
@@ -35,164 +33,147 @@
 
 <thead>
 <tr scope='col'>
-    <th>組</th>
-    <th>番</th>
+    <th>順位</th>
     <th>氏名</th>
-    <th>性</th>
-    <th>歳</th>
     <th>所属団体名</th>
+    <th>最終得点</th>
+    <th>備考</th>
   </tr>
 </thead>
 <tbody>
 
   <tr>
-    <td>1</td>
-    <td>a</td>
-    <td>飯吉　せつ子</td>
-    <td>女</td>
-    <td>F</td>
-    <td>グリーンパワーライフ木曽易の会<trid>1a</trid></td>
-  </tr>
-
-  <tr>
-    <td>1</td>
-    <td>b</td>
-    <td>岩井　悠子</td>
-    <td>女</td>
-    <td>F</td>
-    <td>グリーンパワーライフ木曽易の会<trid>1b</trid></td>
-  </tr>
-
-  <tr>
-    <td>1</td>
-    <td>c</td>
-    <td>大西　朝子</td>
-    <td>女</td>
-    <td>F</td>
-    <td>グリーンパワーライフ木曽易の会<trid>1c</trid></td>
-  </tr>
-
-  <tr>
-    <td>1</td>
-    <td>ｄ</td>
-    <td>折井　妙子</td>
-    <td>女</td>
-    <td>F</td>
-    <td>グリーンパワーライフ木曽易の会<trid>1d</trid></td>
-  </tr>
-
-  <tr>
-    <td>2</td>
-    <td>a</td>
-    <td>郡上　千津子</td>
-    <td>女</td>
-    <td>F</td>
-    <td>グリーンパワーライフ木曽易の会<trid>2a</trid></td>
-  </tr>
-
-  <tr>
-    <td>2</td>
-    <td>b</td>
-    <td>原田　絹江</td>
-    <td>女</td>
-    <td>F</td>
-    <td>グリーンパワーライフ木曽易の会<trid>2b</trid></td>
-  </tr>
-
-  <tr>
-    <td>2</td>
-    <td>c</td>
-    <td>渡辺　恵子</td>
-    <td>女</td>
-    <td>F</td>
-    <td>端午の会<trid>2c</trid></td>
-  </tr>
-
-  <tr>
-    <td>2</td>
-    <td>ｄ</td>
-    <td>黒柳　清子</td>
-    <td>女</td>
-    <td>F</td>
-    <td>信州太極拳連盟<trid>2d</trid></td>
-  </tr>
-
-  <tr>
-    <td>3</td>
-    <td>a</td>
-    <td>上原　妙子　</td>
-    <td>女</td>
-    <td>F</td>
-    <td>太極養生道協会<trid>3a</trid></td>
-  </tr>
-
-  <tr>
-    <td>3</td>
-    <td>b</td>
-    <td>小島　良恵</td>
-    <td>女</td>
-    <td>F</td>
-    <td>端午の会<trid>3b</trid></td>
-  </tr>
-
-  <tr>
-    <td>3</td>
-    <td>c</td>
-    <td>杉浦　八重子</td>
-    <td>女</td>
-    <td>F</td>
-    <td>徐広林太極拳俱楽部<trid>3c</trid></td>
-  </tr>
-
-  <tr>
-    <td>3</td>
-    <td>ｄ</td>
-    <td>辻村　幸子</td>
-    <td>女</td>
-    <td>F</td>
-    <td>太極養生道協会<trid>3d</trid></td>
-  </tr>
-
-  <tr>
-    <td>4</td>
-    <td>a</td>
-    <td>斎藤　惠子</td>
-    <td>女</td>
-    <td>F</td>
-    <td>中日武術太極拳交流協会<trid>4a</trid></td>
-  </tr>
-
-  <tr>
-    <td>4</td>
-    <td>b</td>
-    <td>塩原　紀子</td>
-    <td>女</td>
-    <td>F</td>
-    <td>グリーンパワーライフ木曽易の会<trid>4b</trid></td>
-  </tr>
-
-  <tr>
-    <td>4</td>
-    <td>c</td>
-    <td>桑原　美津子</td>
-    <td>女</td>
-    <td>F</td>
-    <td>グリーンパワーライフ木曽易の会<trid>4c</trid></td>
-  </tr>
-
-  <tr>
-    <td>4</td>
-    <td>ｄ</td>
+    <td>１位</td>
     <td>真造　妙子</td>
-    <td>女</td>
-    <td>F</td>
-    <td>太極養生道協会<trid>4d</trid></td>
+    <td>太極養生道協会</td>
+    <td>8.780 </td>
+    <td> <trid>4d</trid></td>
+  </tr>
+
+  <tr>
+    <td>２位</td>
+    <td>小島　良恵</td>
+    <td>端午の会</td>
+    <td>8.760 </td>
+    <td> <trid>3b</trid></td>
+  </tr>
+
+  <tr>
+    <td>３位</td>
+    <td>桑原　美津子</td>
+    <td>グリーンパワーライフ木曽易の会</td>
+    <td>8.760 </td>
+    <td> <trid>4c</trid></td>
+  </tr>
+
+  <tr>
+    <td>４位</td>
+    <td>飯吉　せつ子</td>
+    <td>グリーンパワーライフ木曽易の会</td>
+    <td>8.750 </td>
+    <td> <trid>1a</trid></td>
+  </tr>
+
+  <tr>
+    <td>５位</td>
+    <td>渡辺　恵子</td>
+    <td>端午の会</td>
+    <td>8.710 </td>
+    <td> <trid>2c</trid></td>
+  </tr>
+
+  <tr>
+    <td>６位</td>
+    <td>郡上　千津子</td>
+    <td>グリーンパワーライフ木曽易の会</td>
+    <td>8.650 </td>
+    <td> <trid>2a</trid></td>
+  </tr>
+
+  <tr>
+    <td>７位</td>
+    <td>黒柳　清子</td>
+    <td>信州太極拳連盟</td>
+    <td>8.650 </td>
+    <td> <trid>2d</trid></td>
+  </tr>
+
+  <tr>
+    <td>８位</td>
+    <td>上原　妙子　</td>
+    <td>太極養生道協会</td>
+    <td>8.650 </td>
+    <td> <trid>3a</trid></td>
+  </tr>
+
+  <tr>
+    <td> </td>
+    <td>岩井　悠子</td>
+    <td>グリーンパワーライフ木曽易の会</td>
+    <td>8.650 </td>
+    <td> <trid>1b</trid></td>
+  </tr>
+
+  <tr>
+    <td> </td>
+    <td>斎藤　惠子</td>
+    <td>中日武術太極拳交流協会</td>
+    <td>8.650 </td>
+    <td> <trid>4a</trid></td>
+  </tr>
+
+  <tr>
+    <td> </td>
+    <td>辻村　幸子</td>
+    <td>太極養生道協会</td>
+    <td>8.600 </td>
+    <td> <trid>3d</trid></td>
+  </tr>
+
+  <tr>
+    <td> </td>
+    <td>大西　朝子</td>
+    <td>グリーンパワーライフ木曽易の会</td>
+    <td>8.560 </td>
+    <td> <trid>1c</trid></td>
+  </tr>
+
+  <tr>
+    <td> </td>
+    <td>塩原　紀子</td>
+    <td>グリーンパワーライフ木曽易の会</td>
+    <td>8.500 </td>
+    <td> <trid>4b</trid></td>
+  </tr>
+
+  <tr>
+    <td> </td>
+    <td>折井　妙子</td>
+    <td>グリーンパワーライフ木曽易の会</td>
+    <td>8.480 </td>
+    <td> <trid>1d</trid></td>
+  </tr>
+
+  <tr>
+    <td> </td>
+    <td>原田　絹江</td>
+    <td>グリーンパワーライフ木曽易の会</td>
+    <td>8.460 </td>
+    <td> <trid>2b</trid></td>
+  </tr>
+
+  <tr>
+    <td> </td>
+    <td>杉浦　八重子</td>
+    <td>徐広林太極拳倶楽部</td>
+    <td>8.350 </td>
+    <td> <trid>3c</trid></td>
   </tr>
 
 <!-- ---------------------------------------------------- -->
 </tbody>
 </table>
-<script src="post.js?ver=2.31"></script>
+<script src="post.js?ver=2.32"></script>
 </body>
 </html>
 
