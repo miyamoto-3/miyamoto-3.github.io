@@ -149,6 +149,7 @@ function offPush(me, fname, par){
 	if ( bSwap == false ){
 		if ( par ){
 			let day = Date.now();
+			day = Math.trunc(day /1000);
 			var path = ".\\post1\\" + fname + ".HTML";
 			window.open(path + "?" + par + "?" + day, "成績表");
 		}
