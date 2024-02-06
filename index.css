@@ -10,10 +10,13 @@ html {
 body {
     text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%; /* Safari */
+  	-moz-text-size-adjust: 100%;
+  	-ms-text-size-adjust: 100%;
 }
 
 li {
 	list-style-type: none;
+	white-space: nowrap;
 }
 
 ul {
@@ -98,19 +101,19 @@ p3 {
 
 .man {
     cursor: pointer;
-	white-space: nowrap;
+//	white-space: nowrap;
     color: midnightblue;
 }
 
 .woman {
     cursor: pointer;
-	white-space: nowrap;
+//	white-space: nowrap;
     color: black;
 }
 
 .baseM {
     cursor: pointer;
-	white-space: nowrap;
+//	white-space: nowrap;
 }
 
 .offM, .onM {
@@ -124,6 +127,22 @@ p3 {
 	position:relative;
 	padding: 0em 0.3em 0.3em 1.0em;
 }
+
+.onM a {
+	margin: 0px;
+	font-weight: bold;
+//  font-size: 120%;
+
+	color: transparent;
+	background: #000;
+//	background: dimgray;
+//	background: lightslategray;
+//	background: darkgreen;
+	text-shadow: 2px 2px 3px rgba( 255, 255, 255, 0.5);
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+
 .offM a::before {
 	position: absolute;
 	content: '';

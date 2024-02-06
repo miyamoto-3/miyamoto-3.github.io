@@ -27,13 +27,27 @@ const MENU4_JP = "コート別の成績表";
 const MENU4_CH = "各场地比赛成绩表";
 const MENU4_EN = "Result by court";
 
+const MENU5_JP = "団体競技";
+const MENU5_CH = "团体地比赛成绩表";
+const MENU5_EN = "Result by Team";
+const MENU_LANG = "myLang";
+
+const singleMenu = 1;
+const modeCookie = 1;
+
 let LANG = "JP";
 let x = 1.0;
 let x_init = 1.0;
 let x_inc = 0.5;
 let downTime = 0;
 let upTime = 0;
+let wo = "desktop";
 
+// 展開されたメニューのID
+let base_top = 0;
+let onCnt = 0;
+let onMe = new Array(256);
+let onYou = new Array(256);
 
 function device()
 {
@@ -48,7 +62,7 @@ function device()
 }
 
 window.addEventListener('load', function(){
-	var wo = device();
+	wo = device();
 	var width = window.innerWidth;
 	var moji_width = width / 16;	// 16文字を１行に表示したい
 	if ( wo == "tablet" ){
@@ -67,6 +81,32 @@ window.addEventListener('load', function(){
 		moji_width = width / 28;
 		var y = moji_width / 16;
     	style.fontSize = y + 'rem';
+	}
+
+	if ( modeCookie == 1 ){
+		const langage = navigator.language;
+		const top2 = langage.slice(0,2);
+		if ( top2 == "zh" ){
+			LANG = "CH";
+			dispMenu(LANG);
+		}
+		else
+		if ( top2 == "en" || top2 == "fr" || top2 == "it" || top2 == "es" || top2 == "pt" || top2 == "de" ){
+			LANG = "EN";
+			dispMenu(LANG);
+		}
+	}
+	else
+	if ( moceCoookie > 1 ){
+		LANG = getCookie(MENU_LANG);
+		if ( LANG == "" ){
+			LANG = "JP";
+			setCookie(MENU_LANG, LANG, 1);
+		}
+		else
+		if ( LANG != "JP" ){
+			dispMenu(LANG);
+		}
 	}
 
 });
@@ -109,20 +149,101 @@ function yomiSwap(me) {
 	return true;
 }
 
+// メニュー(閉->開)のIDを格納
+function addID(me,you)
+{
+	onMe[onCnt] = me;
+	onYou[onCnt] = you;
+	onCnt++;
+	onMe[onCnt] = "";
+	onYou[onCnt] = "";
+}
+// メニュー(開->閉)のIDを削除
+function delID(me,you)
+{
+	let i;
+	i = 0;
+	while( i < onCnt){
+		if ( me == onMe[i] ){
+			while( i < onCnt){
+				onMe[i] = onMe[i+1];
+				onYou[i] = onYou[i+1];
+				i++;
+			}
+			onCnt--;
+			return;
+		}
+		i++;
+	}
+}
+
 /* メニューの開閉 */
 function youOpen(me, you) {
+	let status;
 	let txt;
     let contents = document.getElementById(me).outerHTML;
     let obj = document.getElementById(you).style;
     if (obj.display=="none") {
+		// 閉->開
         obj.display = "block";
 		txt = contents.replace("offM", "onM");
+		if (singleMenu == 1){
+			addID(me,you);
+		}
+		status = 1;
     }
     else{
+		// 開->閉
         obj.display = "none" ;
 		txt = contents.replace("onM", "offM");
+		if (singleMenu == 1){
+			delID(me,you);
+		}
+		status = -1;
     }
 	document.getElementById(me).outerHTML = txt;
+	return( status );
+}
+/*
+	P0101ならP01*
+	P010201ならP0102*
+	が処理対応。
+　	同一レベル以下が対象。
+*/
+function isTargetID(id, target)
+{
+	if ( id == target ){
+		return( 0 );
+	}
+	let  size = id.length;
+	let  you = target.slice(0, size);
+	if ( id == you ){
+		return( 1 );
+	}
+	return( 0 );
+}
+function menuClose(me)
+{
+	let i;
+
+	if ( onCnt < 1 ){
+		return;
+	}
+
+	i = me.length;
+	i -= 2;
+
+	let id = me.slice( 0, i );
+	i = 0;
+	while( i < onCnt ){
+		if ( me != onMe[i] ){
+			if ( isTargetID( id, onMe[i] ) == 1 ){
+				youOpen( onMe[i], onYou[i] );
+				continue;
+			}
+		}
+		i++;
+	}
 }
 
 function scoreOpen(me, fname, par) {
@@ -154,7 +275,16 @@ function offPush(me, fname, par){
 			window.open(path + "?" + par + "?" + day, "成績表");
 		}
 		else{
-			youOpen(me, fname);
+			if ( singleMenu == 1 ){
+				const top1 = document.getElementById(me).getBoundingClientRect().top;
+				menuClose(me);
+				youOpen(me, fname);
+				const top2 = document.getElementById(me).getBoundingClientRect().top;
+				window.scrollBy({top: top2 - top1,left: 0,	behavior: 'smooth'});
+			}
+			else{
+				youOpen(me, fname);
+			}
 		}
 	}
 
@@ -203,37 +333,67 @@ function do_DownScale(id)
 	}
 }
 
+// ある言語のメニュー表示
+function dispMenu(lang) {
+
+	let menu1;
+	let menu2;
+	let menu3;
+	let menu4;
+	let menu5;
+
+	if ( lang == "CH" ){
+		menu1 = MENU1_CH;
+		menu2 = MENU2_CH;
+		menu3 = MENU3_CH;
+		menu4 = MENU4_CH;
+		menu5 = MENU5_CH;
+	}
+	else
+	if ( lang == "EN" ){
+		menu1 = MENU1_EN;
+		menu2 = MENU2_EN;
+		menu3 = MENU3_EN;
+		menu4 = MENU4_EN;
+		menu5 = MENU5_EN;
+	}
+	else{
+		menu1 = MENU1_JP;
+		menu2 = MENU2_JP;
+		menu3 = MENU3_JP;
+		menu4 = MENU4_JP;
+		menu5 = MENU5_JP;
+	}
+
+    let P1 = document.getElementById("P01");
+    let P2 = document.getElementById("P02");
+    let P3 = document.getElementById("P03");
+    let P4 = document.getElementById("P04");
+    let P5 = document.getElementById("P05");
+	P01.innerHTML = P01.innerHTML.replace(P01.innerText, menu1);
+	P02.innerHTML = P02.innerHTML.replace(P02.innerText, menu2);
+	P03.innerHTML = P03.innerHTML.replace(P03.innerText, menu3);
+	P04.innerHTML = P04.innerHTML.replace(P04.innerText, menu4);
+	if ( P05 ){
+		P05.innerHTML = P05.innerHTML.replace(P05.innerText, menu5);
+	}
+}
+
 // ヘルプの表示・非表示
 function helpOpen(you,lang) {
 
     let contents = document.getElementById(you);
 	let text;
-	let menu1;
-	let menu2;
-	let menu3;
-	let menu4;
 
 	if ( lang == "CH" ){
 		text = "1." + HELP1_CH + "\n2." + HELP2_CH + "\n3." + HELP3_CH + "\n";
-		menu1 = MENU1_CH;
-		menu2 = MENU2_CH;
-		menu3 = MENU3_CH;
-		menu4 = MENU4_CH;
 	}
 	else
 	if ( lang == "EN" ){
 		text = "1." + HELP1_EN + "\n2." + HELP2_EN + "\n3." + HELP3_EN + "\n";
-		menu1 = MENU1_EN;
-		menu2 = MENU2_EN;
-		menu3 = MENU3_EN;
-		menu4 = MENU4_EN;
 	}
 	else{
 		text = "1." + HELP1_JP + "\n2." + HELP2_JP + "\n3." + HELP3_JP + "\n";
-		menu1 = MENU1_JP;
-		menu2 = MENU2_JP;
-		menu3 = MENU3_JP;
-		menu4 = MENU4_JP;
 	}
 	contents.innerText = text;
 	let obj = contents.style;
@@ -243,14 +403,7 @@ function helpOpen(you,lang) {
 	else{
         obj.display = "block";
 
-	    let P1 = document.getElementById("P01");
-	    let P2 = document.getElementById("P02");
-	    let P3 = document.getElementById("P03");
-	    let P4 = document.getElementById("P04");
-		P01.innerHTML = P01.innerHTML.replace(P01.innerText, menu1);
-		P02.innerHTML = P02.innerHTML.replace(P02.innerText, menu2);
-		P03.innerHTML = P03.innerHTML.replace(P03.innerText, menu3);
-		P04.innerHTML = P04.innerHTML.replace(P04.innerText, menu4);
+		dispMenu(lang);
 
 		if (lang=="JP" || LANG=="JP"){
 		    yomiSwap("M01");
@@ -259,6 +412,9 @@ function helpOpen(you,lang) {
 		}
 
 		LANG = lang;
+		if ( modeCookie > 1 ){
+			updateCookie(MENU_LANG, LANG, 1);
+		}
 	}
 
 }
@@ -285,3 +441,46 @@ function getRuleBySelector(sele){
     return( null );
 }
 
+// クッキーを設定する関数
+function setCookie(name, value, days) {
+  let date = new Date();
+  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+  let expires = "; expires=" + date.toUTCString();
+  document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+// クッキーを取得する関数
+function getCookie(name) {
+  let cookieName = name + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let cookies = decodedCookie.split(';');
+  
+  for (let i = 0; i < cookies.length; i++) {
+    let cookie = cookies[i].trim();
+    if (cookie.indexOf(cookieName) === 0) {
+      return cookie.substring(cookieName.length, cookie.length);
+    }
+  }
+  return "";
+}
+
+// クッキーを削除する関数
+function deleteCookie(name) {
+  setCookie(name, "", -1);
+}
+
+// クッキーを更新する関数
+function updateCookie(name, newValue, newDays = null) {
+  let existingCookieValue = getCookie(name);
+//console.log("update=[",existingCookieValue,"][",name,"]");
+  if (existingCookieValue !== "") {
+    let days = newDays ? newDays : getCookieDays(name);
+    setCookie(name, newValue, days);
+  }
+}
+
+// クッキーの有効期限（日数）を取得する補助関数
+function getCookieDays(name) {
+  // この関数は、クッキーの作成時に有効期限を取得するために使用されます。
+  // 必要に応じて実装を追加してください。
+}
