@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>競技進行表</title>
+  <link rel="stylesheet" href="post.css?ver=2.54">
+</head>
+
+<body>
+<header class="fix_part">
+<Input type="button" onClick="javascript:do_next(0);" value="◄" class="batsu">
+<Input type="button" onClick="javascript:skip_wo();" value="↓" class="batsu">
+<Input type="button" onClick="javascript:do_next('NOW2.HTML');" value="進行状況" id="JP02" class="batsu" hidden="">
+<Input type="button" onClick="javascript:do_next('NOW2.HTML');" value="比賽進度" id="CH02" class="batsu" hidden="">
+<Input type="button" onClick="javascript:do_next('NOW2.HTML');" value="Competition progress" id="EN02" class="batsu" hidden="">
+<Input type="button" onClick="javascript:parSave();" value="☆" class="batsu" id="siori" hidden="">
+</header>
+<p class="padding">　</p>
+<div>
+<tr>
+  <td>第５回　東京国際武術節</td>
+  <td>&emsp;</td>
+  <td><span id="date">２０２４年６月３０日</span></td>
+</tr>
+</div>
+<div>
+<tr>
+  <td>第２コート</td>
+  <td>（４）</td>
+  <td>&emsp;&emsp;</td>
+  <td><mark>０８：５０</mark> 開始予定</td>
+</tr>
+</div>
+<table>
+<caption>
+呉式太極拳
+</caption>
+<!-- ---------------------------------------------------- -->
+
+<thead>
+<tr scope='col'>
+    <th>組</th>
+    <th>番</th>
+    <th>氏名</th>
+    <th>性</th>
+    <th>歳</th>
+    <th>所属団体名</th>
+  </tr>
+</thead>
+<tbody>
+
+  <tr>
+    <td>１<br/><small>(08:50～)</small></td>
+    <td>a</td>
+    <td>周 武</td>
+    <td>男</td>
+    <td>C</td>
+    <td>中国上海金友武悦隊<trid>1a</trid></td>
+  </tr>
+
+  <tr>
+    <td>１<br/><small>(08:50～)</small></td>
+    <td>b</td>
+    <td>石橋 香</td>
+    <td>女</td>
+    <td>D</td>
+    <td>大陸武術協会<trid>1b</trid></td>
+  </tr>
+
+  <tr>
+    <td>１<br/><small>(08:50～)</small></td>
+    <td>c</td>
+    <td>麦 慧怡</td>
+    <td>女</td>
+    <td>E</td>
+    <td>香港太極耆縁養生会<trid>1c</trid></td>
+  </tr>
+
+  <tr>
+    <td>２<br/><small>(08:56～)</small></td>
+    <td>a</td>
+    <td>森 強志</td>
+    <td>男</td>
+    <td>D</td>
+    <td>英才太極拳<trid>2a</trid></td>
+  </tr>
+
+  <tr>
+    <td>２<br/><small>(08:56～)</small></td>
+    <td>b</td>
+    <td>劉 国栄</td>
+    <td>男</td>
+    <td>E</td>
+    <td>香港太極耆縁養生会<trid>2b</trid></td>
+  </tr>
+
+  <tr>
+    <td>２<br/><small>(08:56～)</small></td>
+    <td>c</td>
+    <td>北島 月恵</td>
+    <td>女</td>
+    <td>E</td>
+    <td>大陸武術協会<trid>2c</trid></td>
+  </tr>
+
+  <tr>
+    <td>２<br/><small>(08:56～)</small></td>
+    <td>d</td>
+    <td>林 早苗</td>
+    <td>女</td>
+    <td>E</td>
+    <td>大陸武術協会<trid>2d</trid></td>
+  </tr>
+
+  <tr>
+    <td>３<br/><small>(09:02～)</small></td>
+    <td>a</td>
+    <td>美根 明子</td>
+    <td>女</td>
+    <td>D</td>
+    <td>大陸武術協会<trid>3a</trid></td>
+  </tr>
+
+  <tr>
+    <td>３<br/><small>(09:02～)</small></td>
+    <td>b</td>
+    <td>王 人立</td>
+    <td>男</td>
+    <td>D</td>
+    <td>中国上海金友武悦隊<trid>3b</trid></td>
+  </tr>
+
+  <tr>
+    <td>３<br/><small>(09:02～)</small></td>
+    <td>c</td>
+    <td>喜楽 里美</td>
+    <td>女</td>
+    <td>E</td>
+    <td>北関東武術連盟<trid>3c</trid></td>
+  </tr>
+
+  <tr>
+    <td>３<br/><small>(09:02～)</small></td>
+    <td>d</td>
+    <td>上野山 有希子</td>
+    <td>女</td>
+    <td>E</td>
+    <td>大陸武術協会<trid>3d</trid></td>
+  </tr>
+
+<!-- ---------------------------------------------------- -->
+</tbody>
+</table>
+<script src="post.js?ver=2.54"></script>
+</body>
+<footer>
+<small>2024/09/07 5:41:28</small>
+<p class="padding">　</p>
+<p id="JP01" hidden=""><span>※個人競技の参加者は２０分前に<a href="recept.png" target="_blank">地下一回受付</a>へ集合</span></p>
+<p id="CH01" hidden=""><span>※個人賽參賽者須於２０分鐘前在<a href="recept.png" target="_blank">地下一層接待處</a>集合</span></p>
+<p id="EN01" hidden=""><span>※Individual competition participants must gather at the  <a href="recept.png" target="_blank">reception desk on the first basement floor</a> by 20 minutes ago</span></p>
+</footer>
+</html>
+

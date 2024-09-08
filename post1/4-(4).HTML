@@ -5,95 +5,100 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>成績表</title>
-  <link rel="stylesheet" href="post.css?ver=2.31">
+  <title>競技進行表</title>
+  <link rel="stylesheet" href="post.css?ver=2.54">
 </head>
 
 <body>
+<header class="fix_part">
 <Input type="button" onClick="javascript:do_next(0);" value="◄" class="batsu">
-<Input type="button" onClick="javascript:do_next(2);" value="採点詳細へ" class="batsu">
+<Input type="button" onClick="javascript:skip_wo();" value="↓" class="batsu">
+<Input type="button" onClick="javascript:do_next('NOW4.HTML');" value="進行状況" id="JP02" class="batsu" hidden="">
+<Input type="button" onClick="javascript:do_next('NOW4.HTML');" value="比賽進度" id="CH02" class="batsu" hidden="">
+<Input type="button" onClick="javascript:do_next('NOW4.HTML');" value="Competition progress" id="EN02" class="batsu" hidden="">
+<Input type="button" onClick="javascript:parSave();" value="☆" class="batsu" id="siori" hidden="">
+</header>
+<p class="padding">　</p>
 <div>
 <tr>
-  <td>第４回　東京国際武術節</td>
+  <td>第５回　東京国際武術節</td>
   <td>&emsp;</td>
-  <td>２０２３年６月３０日</td>
+  <td><span id="date">２０２４年６月３０日</span></td>
 </tr>
 </div>
 <div>
 <tr>
   <td>第４コート</td>
   <td>（４）</td>
+  <td>&emsp;&emsp;</td>
+  <td><mark>１１：２４→１１：２５</mark> 開始予定</td>
 </tr>
 </div>
 <table>
 <caption>
-陳式太極拳　男子 Ｅ 組
+徒手、器械など対練
 </caption>
 <!-- ---------------------------------------------------- -->
 
 <thead>
 <tr scope='col'>
-    <th>順位</th>
+    <th>組</th>
+    <th>番</th>
     <th>氏名</th>
+    <th>性</th>
+    <th>歳</th>
     <th>所属団体名</th>
-    <th>最終得点</th>
-    <th>備考</th>
   </tr>
 </thead>
 <tbody>
 
   <tr>
-    <td>１位</td>
-    <td>菊池　啓</td>
-    <td>太極雙修会</td>
-    <td>8.710 </td>
-    <td> <trid>1b</trid></td>
+    <td>１<br/><small>(11:25～)</small></td>
+    <td>a</td>
+    <td>梅田 結華<br/>榊原 真子<br/>杉原 京</td>
+    <td>女<br/>女<br/>女</td>
+    <td>B<br/>B<br/>B</td>
+    <td>共立女子中学高等学校 太極拳部<trid>1a</trid></td>
   </tr>
 
   <tr>
-    <td>２位</td>
-    <td>周　志文</td>
-    <td>香港太極青年慈善基金会</td>
-    <td>8.610 </td>
-    <td> <trid>2b</trid></td>
+    <td>２<br/><small>(11:29～)</small></td>
+    <td>a</td>
+    <td>Suriyasat Pukan<br/>Vincent Li</td>
+    <td>男<br/>男</td>
+    <td>B<br/>B</td>
+    <td>少林武術中心USA<trid>2a</trid></td>
   </tr>
 
   <tr>
-    <td>３位</td>
-    <td>前田　正明</td>
-    <td>弥生会</td>
-    <td>8.550 </td>
-    <td> <trid>2a</trid></td>
+    <td>３<br/><small>(11:33～)</small></td>
+    <td>a</td>
+    <td>髙木 爽太<br/>Douangprachanh Michel</td>
+    <td>男<br/>男</td>
+    <td>C<br/>C</td>
+    <td>横浜武術院<trid>3a</trid></td>
   </tr>
 
   <tr>
-    <td>４位</td>
-    <td>若泉　和司</td>
-    <td>精杰仙</td>
-    <td>8.460 </td>
-    <td> <trid>2c</trid></td>
-  </tr>
-
-  <tr>
-    <td>５位</td>
-    <td>富田　泰正</td>
-    <td>太極練功会</td>
-    <td>8.430 </td>
-    <td> <trid>1a</trid></td>
-  </tr>
-
-  <tr>
-    <td> </td>
-    <td>歐陽　志明</td>
-    <td>香港神子太極会</td>
-    <td>8.360 </td>
-    <td> <trid>1c</trid></td>
+    <td>４<br/><small>(11:37～)</small></td>
+    <td>a</td>
+    <td>中川 早紀<br/>藤田 真代</td>
+    <td>女<br/>女</td>
+    <td>D<br/>C</td>
+    <td>横浜武術院<trid>4a</trid></td>
   </tr>
 
 <!-- ---------------------------------------------------- -->
 </tbody>
 </table>
-<script src="post.js?ver=2.31"></script>
+<script src="post.js?ver=2.54"></script>
 </body>
+<footer>
+<small>2024/09/07 5:41:33</small>
+<p class="padding">　</p>
+<p id="JP01" hidden=""><span>※個人競技の参加者は２０分前に<a href="recept.png" target="_blank">地下一回受付</a>へ集合</span></p>
+<p id="CH01" hidden=""><span>※個人賽參賽者須於２０分鐘前在<a href="recept.png" target="_blank">地下一層接待處</a>集合</span></p>
+<p id="EN01" hidden=""><span>※Individual competition participants must gather at the  <a href="recept.png" target="_blank">reception desk on the first basement floor</a> by 20 minutes ago</span></p>
+</footer>
 </html>
 

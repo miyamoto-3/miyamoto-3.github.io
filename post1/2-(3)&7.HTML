@@ -1,0 +1,662 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>競技進行表</title>
+  <link rel="stylesheet" href="post.css?ver=2.54">
+</head>
+
+<body>
+<header class="fix_part">
+<Input type="button" onClick="javascript:do_next(0);" value="◄" class="batsu">
+<Input type="button" onClick="javascript:skip_wo();" value="↓" class="batsu">
+<Input type="button" onClick="javascript:do_next('NOW2.HTML');" value="進行状況" id="JP02" class="batsu" hidden="">
+<Input type="button" onClick="javascript:do_next('NOW2.HTML');" value="比賽進度" id="CH02" class="batsu" hidden="">
+<Input type="button" onClick="javascript:do_next('NOW2.HTML');" value="Competition progress" id="EN02" class="batsu" hidden="">
+<Input type="button" onClick="javascript:parSave();" value="☆" class="batsu" id="siori" hidden="">
+</header>
+<p class="padding">　</p>
+<div>
+<tr>
+  <td>第５回　東京国際武術節</td>
+  <td>&emsp;</td>
+  <td><span id="date">２０２４年６月３０日</span></td>
+</tr>
+</div>
+<div>
+<tr>
+  <td>第２コート</td>
+  <td>（３）</td>
+  <td>&emsp;&emsp;</td>
+  <td><mark>１０：０８</mark> 開始予定</td>
+</tr>
+</div>
+<table>
+<caption>
+陳式太極拳
+</caption>
+<!-- ---------------------------------------------------- -->
+
+<thead>
+<tr scope='col'>
+    <th>組</th>
+    <th>番</th>
+    <th>氏名</th>
+    <th>性</th>
+    <th>歳</th>
+    <th>所属団体名</th>
+  </tr>
+</thead>
+<tbody>
+
+  <tr>
+    <td>１<br/><small>(10:08～)</small></td>
+    <td>a</td>
+    <td>孫 世文</td>
+    <td>男</td>
+    <td>C</td>
+    <td>廖峰忽雷太極拳研究会<trid>1a</trid></td>
+  </tr>
+
+  <tr>
+    <td>１<br/><small>(10:08～)</small></td>
+    <td>b</td>
+    <td>喜多 忍</td>
+    <td>男</td>
+    <td>D</td>
+    <td>喜多武術培訓中心<trid>1b</trid></td>
+  </tr>
+
+  <tr>
+    <td>１<br/><small>(10:08～)</small></td>
+    <td>c</td>
+    <td>天神 和久</td>
+    <td>男</td>
+    <td>D</td>
+    <td>個人<trid>1c</trid></td>
+  </tr>
+
+  <tr>
+    <td>１<br/><small>(10:08～)</small></td>
+    <td>d</td>
+    <td>賴 以柱</td>
+    <td>男</td>
+    <td>D</td>
+    <td>中国上海金友武悦隊<trid>1d</trid></td>
+  </tr>
+
+  <tr>
+    <td>２<br/><small>(10:14～)</small></td>
+    <td>a</td>
+    <td>杉本 由美</td>
+    <td>女</td>
+    <td>E</td>
+    <td>北関東武術連盟<trid>2a</trid></td>
+  </tr>
+
+  <tr>
+    <td>２<br/><small>(10:14～)</small></td>
+    <td>b</td>
+    <td>吉江 恭子</td>
+    <td>女</td>
+    <td>E</td>
+    <td>太極道混元会<trid>2b</trid></td>
+  </tr>
+
+  <tr>
+    <td>２<br/><small>(10:14～)</small></td>
+    <td>c</td>
+    <td>呉 佩寧</td>
+    <td>女</td>
+    <td>E</td>
+    <td>香港台下学堂<trid>2c</trid></td>
+  </tr>
+
+  <tr>
+    <td>２<br/><small>(10:14～)</small></td>
+    <td>d</td>
+    <td>銭 裕文</td>
+    <td>女</td>
+    <td>E</td>
+    <td>北京洪式太極拳専委会<trid>2d</trid></td>
+  </tr>
+
+  <tr>
+    <td>３<br/><small>(10:20～)</small></td>
+    <td>a</td>
+    <td>劉 卓嫣</td>
+    <td>女</td>
+    <td>A</td>
+    <td>廖峰忽雷太極拳研究会<trid>3a</trid></td>
+  </tr>
+
+  <tr>
+    <td>３<br/><small>(10:20～)</small></td>
+    <td>b</td>
+    <td>中島 有理</td>
+    <td>女</td>
+    <td>C</td>
+    <td>精杰仙<trid>3b</trid></td>
+  </tr>
+
+  <tr>
+    <td>３<br/><small>(10:20～)</small></td>
+    <td>c</td>
+    <td>池田 真帆</td>
+    <td>女</td>
+    <td>C</td>
+    <td>大陸武術協会<trid>3c</trid></td>
+  </tr>
+
+  <tr>
+    <td>３<br/><small>(10:20～)</small></td>
+    <td>d</td>
+    <td>大崎 未来</td>
+    <td>女</td>
+    <td>C</td>
+    <td>中日武術太極拳交流協会<trid>3d</trid></td>
+  </tr>
+
+  <tr>
+    <td>４<br/><small>(10:26～)</small></td>
+    <td>a</td>
+    <td>黄 美蓮</td>
+    <td>女</td>
+    <td>C</td>
+    <td>北京洪式太極拳専委会<trid>4a</trid></td>
+  </tr>
+
+  <tr>
+    <td>４<br/><small>(10:26～)</small></td>
+    <td>b</td>
+    <td>洪 琪健</td>
+    <td>女</td>
+    <td>C</td>
+    <td>北京洪式太極拳専委会<trid>4b</trid></td>
+  </tr>
+
+  <tr>
+    <td>４<br/><small>(10:26～)</small></td>
+    <td>c</td>
+    <td>Phatpicha</td>
+    <td>女</td>
+    <td>D</td>
+    <td>ﾀｲ<trid>4c</trid></td>
+  </tr>
+
+  <tr>
+    <td>４<br/><small>(10:26～)</small></td>
+    <td>d</td>
+    <td>清水 佳子</td>
+    <td>女</td>
+    <td>D</td>
+    <td>徐広林太極拳ｸﾗﾌﾞ<trid>4d</trid></td>
+  </tr>
+
+  <tr>
+    <td>５<br/><small>(10:32～)</small></td>
+    <td>a</td>
+    <td>横川 ウィーニー</td>
+    <td>女</td>
+    <td>D</td>
+    <td>徐広林太極拳ｸﾗﾌﾞ<trid>5a</trid></td>
+  </tr>
+
+  <tr>
+    <td>５<br/><small>(10:32～)</small></td>
+    <td>b</td>
+    <td>銭 怡</td>
+    <td>女</td>
+    <td>D</td>
+    <td>中国上海金友武悦隊<trid>5b</trid></td>
+  </tr>
+
+  <tr>
+    <td>５<br/><small>(10:32～)</small></td>
+    <td>c</td>
+    <td>峰村 あかね</td>
+    <td>女</td>
+    <td>D</td>
+    <td>太極雙修会<trid>5c</trid></td>
+  </tr>
+
+  <tr>
+    <td>５<br/><small>(10:32～)</small></td>
+    <td>d</td>
+    <td>楊 文賢</td>
+    <td>女</td>
+    <td>D</td>
+    <td>中国上海金友武悦隊<trid>5d</trid></td>
+  </tr>
+
+  <tr>
+    <td>６<br/><small>(10:48～)</small></td>
+    <td>a</td>
+    <td>阿部 真理絵</td>
+    <td>女</td>
+    <td>D</td>
+    <td>日本太極養生道協会<trid>6a</trid></td>
+  </tr>
+
+  <tr>
+    <td>６<br/><small>(10:48～)</small></td>
+    <td>b</td>
+    <td>宇田 貴子</td>
+    <td>女</td>
+    <td>D</td>
+    <td>北関東武術連盟<trid>6b</trid></td>
+  </tr>
+
+  <tr>
+    <td>６<br/><small>(10:48～)</small></td>
+    <td>c</td>
+    <td>于 超亜</td>
+    <td>男</td>
+    <td>D</td>
+    <td>中国上海金友武悦隊<trid>6c</trid></td>
+  </tr>
+
+  <tr>
+    <td>６<br/><small>(10:48～)</small></td>
+    <td>d</td>
+    <td>萩生田 修</td>
+    <td>男</td>
+    <td>D</td>
+    <td>徐広林太極拳ｸﾗﾌﾞ<trid>6d</trid></td>
+  </tr>
+
+  <tr>
+    <td>７<br/><small>(10:54～)</small></td>
+    <td>a</td>
+    <td>望月 優</td>
+    <td>女</td>
+    <td>D</td>
+    <td>太極道混元会<trid>7a</trid></td>
+  </tr>
+
+  <tr>
+    <td>７<br/><small>(10:54～)</small></td>
+    <td>b</td>
+    <td>米倉 歩</td>
+    <td>女</td>
+    <td>D</td>
+    <td>大陸武術協会<trid>7b</trid></td>
+  </tr>
+
+  <tr>
+    <td>７<br/><small>(10:54～)</small></td>
+    <td>c</td>
+    <td>宋 壽邦</td>
+    <td>男</td>
+    <td>D</td>
+    <td>莱州中華武術学校<trid>7c</trid></td>
+  </tr>
+
+  <tr>
+    <td>７<br/><small>(10:54～)</small></td>
+    <td>d</td>
+    <td>屠 偉峰</td>
+    <td>男</td>
+    <td>D</td>
+    <td>中国上海金友武悦隊<trid>7d</trid></td>
+  </tr>
+
+  <tr>
+    <td>８<br/><small>(11:00～)</small></td>
+    <td>a</td>
+    <td>小板橋 るみ子</td>
+    <td>女</td>
+    <td>D</td>
+    <td>北関東武術連盟<trid>8a</trid></td>
+  </tr>
+
+  <tr>
+    <td>８<br/><small>(11:00～)</small></td>
+    <td>b</td>
+    <td>髙木 咲江</td>
+    <td>女</td>
+    <td>D</td>
+    <td>太極雙修会<trid>8b</trid></td>
+  </tr>
+
+  <tr>
+    <td>８<br/><small>(11:00～)</small></td>
+    <td>c</td>
+    <td>付 貴華</td>
+    <td>女</td>
+    <td>D</td>
+    <td>中国上海金友武悦隊<trid>8c</trid></td>
+  </tr>
+
+  <tr>
+    <td>８<br/><small>(11:00～)</small></td>
+    <td>d</td>
+    <td>張 剣波</td>
+    <td>女</td>
+    <td>D</td>
+    <td>莱州中華武術学校<trid>8d</trid></td>
+  </tr>
+
+  <tr>
+    <td>９<br/><small>(11:06～)</small></td>
+    <td>a</td>
+    <td>吉田 智子</td>
+    <td>女</td>
+    <td>E</td>
+    <td>英才太極拳<trid>9a</trid></td>
+  </tr>
+
+  <tr>
+    <td>９<br/><small>(11:06～)</small></td>
+    <td>b</td>
+    <td>柳 林青</td>
+    <td>女</td>
+    <td>E</td>
+    <td>北京洪式太極拳専委会<trid>9b</trid></td>
+  </tr>
+
+  <tr>
+    <td>９<br/><small>(11:06～)</small></td>
+    <td>c</td>
+    <td>國米  リリ子</td>
+    <td>女</td>
+    <td>E</td>
+    <td>太極道混元会<trid>9c</trid></td>
+  </tr>
+
+  <tr>
+    <td>９<br/><small>(11:06～)</small></td>
+    <td>d</td>
+    <td>井上 祥子</td>
+    <td>女</td>
+    <td>E</td>
+    <td>太極雙修会<trid>9d</trid></td>
+  </tr>
+
+  <tr>
+    <td>１０<br/><small>(11:12～)</small></td>
+    <td>a</td>
+    <td>井上 佳子</td>
+    <td>女</td>
+    <td>E</td>
+    <td>精杰仙<trid>10a</trid></td>
+  </tr>
+
+  <tr>
+    <td>１０<br/><small>(11:12～)</small></td>
+    <td>b</td>
+    <td>三品 百合子</td>
+    <td>女</td>
+    <td>E</td>
+    <td>中日武術太極拳交流協会<trid>10b</trid></td>
+  </tr>
+
+  <tr>
+    <td>１０<br/><small>(11:12～)</small></td>
+    <td>c</td>
+    <td>荒木 真由美</td>
+    <td>女</td>
+    <td>E</td>
+    <td>北関東武術連盟<trid>10c</trid></td>
+  </tr>
+
+  <tr>
+    <td>１０<br/><small>(11:12～)</small></td>
+    <td>d</td>
+    <td>栢嶋 秀行</td>
+    <td>男</td>
+    <td>E</td>
+    <td>日本太極養生道協会<trid>10d</trid></td>
+  </tr>
+
+  <tr>
+    <td>１１<br/><small>(11:18～)</small></td>
+    <td>a</td>
+    <td>小川 千里</td>
+    <td>女</td>
+    <td>E</td>
+    <td>中日武術太極拳交流協会<trid>11a</trid></td>
+  </tr>
+
+  <tr>
+    <td>１１<br/><small>(11:18～)</small></td>
+    <td>b</td>
+    <td>尾城 圭子</td>
+    <td>女</td>
+    <td>F</td>
+    <td>太極雙修会<trid>11b</trid></td>
+  </tr>
+
+  <tr>
+    <td>１１<br/><small>(11:18～)</small></td>
+    <td>c</td>
+    <td>佐久間 里子</td>
+    <td>女</td>
+    <td>F</td>
+    <td>太極練功会<trid>11c</trid></td>
+  </tr>
+
+  <tr>
+    <td>１１<br/><small>(11:18～)</small></td>
+    <td>d</td>
+    <td>浅井 はるみ</td>
+    <td>女</td>
+    <td>F</td>
+    <td>鳳游会<trid>11d</trid></td>
+  </tr>
+
+  <tr>
+    <td>１２<br/><small>(11:24～)</small></td>
+    <td>a</td>
+    <td>澤部 晶子</td>
+    <td>女</td>
+    <td>F</td>
+    <td>日本太極養生道協会<trid>12a</trid></td>
+  </tr>
+
+  <tr>
+    <td>１２<br/><small>(11:24～)</small></td>
+    <td>b</td>
+    <td>内田 陽子</td>
+    <td>女</td>
+    <td>F</td>
+    <td>徐広林太極拳ｸﾗﾌﾞ<trid>12b</trid></td>
+  </tr>
+
+  <tr>
+    <td>１２<br/><small>(11:24～)</small></td>
+    <td>c</td>
+    <td>鎌戸 成子</td>
+    <td>女</td>
+    <td>F</td>
+    <td>太極雙修会<trid>12c</trid></td>
+  </tr>
+
+  <tr>
+    <td>１２<br/><small>(11:24～)</small></td>
+    <td>d</td>
+    <td>長坂 守</td>
+    <td>男</td>
+    <td>F</td>
+    <td>北関東武術連盟<trid>12d</trid></td>
+  </tr>
+
+  <tr>
+    <td>１３<br/><small>(11:30～)</small></td>
+    <td>a</td>
+    <td>所 騰岳</td>
+    <td>男</td>
+    <td>A</td>
+    <td>莱州中華武術学校<trid>13a</trid></td>
+  </tr>
+
+  <tr>
+    <td>１３<br/><small>(11:30～)</small></td>
+    <td>b</td>
+    <td>園田 励</td>
+    <td>男</td>
+    <td>C</td>
+    <td>太極練功会<trid>13b</trid></td>
+  </tr>
+
+  <tr>
+    <td>１３<br/><small>(11:30～)</small></td>
+    <td>c</td>
+    <td>朱 瑞</td>
+    <td>男</td>
+    <td>C</td>
+    <td>中国上海金友武悦隊<trid>13c</trid></td>
+  </tr>
+
+  <tr>
+    <td>１３<br/><small>(11:30～)</small></td>
+    <td>d</td>
+    <td>鳥巣 良太</td>
+    <td>男</td>
+    <td>D</td>
+    <td>太極練功会<trid>13d</trid></td>
+  </tr>
+
+  <tr>
+    <td>１４<br/><small>(11:36～)</small></td>
+    <td>a</td>
+    <td>五月女 裕一</td>
+    <td>男</td>
+    <td>D</td>
+    <td>精杰仙<trid>14a</trid></td>
+  </tr>
+
+  <tr>
+    <td>１４<br/><small>(11:36～)</small></td>
+    <td>b</td>
+    <td>大嶋 浩一</td>
+    <td>男</td>
+    <td>D</td>
+    <td>太極練功会<trid>14b</trid></td>
+  </tr>
+
+  <tr>
+    <td>１４<br/><small>(11:36～)</small></td>
+    <td>c</td>
+    <td>佐渡 正城</td>
+    <td>男</td>
+    <td>D</td>
+    <td>太極道混元会<trid>14c</trid></td>
+  </tr>
+
+  <tr>
+    <td>１４<br/><small>(11:36～)</small></td>
+    <td>d</td>
+    <td>中村 登美男</td>
+    <td>男</td>
+    <td>F</td>
+    <td>中野区太極拳協会<trid>14d</trid></td>
+  </tr>
+
+  <tr>
+    <td>１５<br/><small>(11:42～)</small></td>
+    <td>a</td>
+    <td>王 振平</td>
+    <td>男</td>
+    <td>D</td>
+    <td>中国上海金友武悦隊<trid>15a</trid></td>
+  </tr>
+
+  <tr>
+    <td>１５<br/><small>(11:42～)</small></td>
+    <td>b</td>
+    <td>松田  晴行</td>
+    <td>男</td>
+    <td>E</td>
+    <td>自然身法研究会<trid>15b</trid></td>
+  </tr>
+
+  <tr>
+    <td>１５<br/><small>(11:42～)</small></td>
+    <td>c</td>
+    <td>周 志文</td>
+    <td>男</td>
+    <td>E</td>
+    <td>香港太極耆縁養生会<trid>15c</trid></td>
+  </tr>
+
+  <tr>
+    <td>１５<br/><small>(11:42～)</small></td>
+    <td>d</td>
+    <td>富田 泰正</td>
+    <td>男</td>
+    <td>E</td>
+    <td>太極練功会<trid>15d</trid></td>
+  </tr>
+
+  <tr>
+    <td>１６<br/><small>(11:48～)</small></td>
+    <td>a</td>
+    <td>若泉 和司</td>
+    <td>男</td>
+    <td>E</td>
+    <td>精杰仙<trid>16a</trid></td>
+  </tr>
+
+  <tr>
+    <td>１６<br/><small>(11:48～)</small></td>
+    <td>b</td>
+    <td>越智 啓二</td>
+    <td>男</td>
+    <td>E</td>
+    <td>北関東武術連盟<trid>16b</trid></td>
+  </tr>
+
+  <tr>
+    <td>１６<br/><small>(11:48～)</small></td>
+    <td>c</td>
+    <td>前田 正明</td>
+    <td>男</td>
+    <td>E</td>
+    <td>弥生会<trid>16c</trid></td>
+  </tr>
+
+  <tr>
+    <td>１７<br/><small>(11:54～)</small></td>
+    <td>a</td>
+    <td>菊池 啓</td>
+    <td>男</td>
+    <td>E</td>
+    <td>太極雙修会<trid>17a</trid></td>
+  </tr>
+
+  <tr>
+    <td>１７<br/><small>(11:54～)</small></td>
+    <td>b</td>
+    <td>徐 栄章</td>
+    <td>男</td>
+    <td>F</td>
+    <td>中国上海金友武悦隊<trid>17b</trid></td>
+  </tr>
+
+  <tr>
+    <td>１７<br/><small>(11:54～)</small></td>
+    <td>c</td>
+    <td>横山 裕</td>
+    <td>男</td>
+    <td>F</td>
+    <td>太極練功会<trid>17c</trid></td>
+  </tr>
+
+<!-- ---------------------------------------------------- -->
+</tbody>
+</table>
+<script src="post.js?ver=2.54"></script>
+</body>
+<footer>
+<small>2024/09/07 5:41:28</small>
+<p class="padding">　</p>
+<p id="JP01" hidden=""><span>※個人競技の参加者は２０分前に<a href="recept.png" target="_blank">地下一回受付</a>へ集合</span></p>
+<p id="CH01" hidden=""><span>※個人賽參賽者須於２０分鐘前在<a href="recept.png" target="_blank">地下一層接待處</a>集合</span></p>
+<p id="EN01" hidden=""><span>※Individual competition participants must gather at the  <a href="recept.png" target="_blank">reception desk on the first basement floor</a> by 20 minutes ago</span></p>
+</footer>
+</html>
+
