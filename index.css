@@ -168,3 +168,10 @@ p3 {
 	transform: rotate(45deg);
 }
 
+.hide {
+//	display: none;
+
+	animation-name: textanime;/*keyname*/
+	animation-duration:0.3s;/*Ä¶ŠÔ*/
+	animation-iteration-count:1;/*ŒJ‚è•Ô‚µ*/
+}

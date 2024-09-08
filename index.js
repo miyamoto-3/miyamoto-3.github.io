@@ -1,4 +1,3 @@
-
 const HELP1_JP = "確認したい成績表を下記メニューから選択してください";
 const HELP1_CH = "从下列菜单中选择要确认的成绩表";
 const HELP1_EN = "Select the gradebook from the menu below";
@@ -27,13 +26,14 @@ const MENU4_JP = "コート別の成績表";
 const MENU4_CH = "各场地比赛成绩表";
 const MENU4_EN = "Result by court";
 
-const MENU5_JP = "団体競技";
-const MENU5_CH = "团体地比赛成绩表";
-const MENU5_EN = "Result by Team";
+const MENU5_JP = "団体競技・その他";
+const MENU5_CH = "团体地比赛成绩表・其他";
+const MENU5_EN = "Result by Team・other";
 const MENU_LANG = "myLang";
 
 const singleMenu = 1;
 const modeCookie = 1;
+const parID = "myPar";
 
 let LANG = "JP";
 let x = 1.0;
@@ -49,6 +49,95 @@ let onCnt = 0;
 let onMe = new Array(256);
 let onYou = new Array(256);
 
+// 展開されるメニューのID
+let hideCnt = 0;
+let hideID = new Array(256);
+
+function onHide( id )
+{
+	let text;
+    let body = document.getElementById(id).outerHTML;
+	let top = id.slice(0,1);
+	if ( top == "M" ){
+		text = body.replace('><a>', ' class="hide"><a>');
+	}
+	else{
+		text = body.replace('offM"', 'offM hide"');
+	}
+	document.getElementById(id).outerHTML = text;
+}
+
+function offHide( id )
+{
+	let text;
+// console.log("[",id,"]");
+
+    let body = document.getElementById(id).outerHTML;
+	let top = id.slice(0,1);
+	if ( top == "M" ){
+		text = body.replace(' class="hide"', '');
+	}
+	else{
+		text = body.replace('offM hide"', 'offM"');
+	}
+	document.getElementById(id).outerHTML = text;
+}
+
+/*
+	展開されるため表示対象となるIDか
+*/
+function isHideID(id, target)
+{
+	let top = target.slice(0,1);
+
+	if ( top == "M" ){
+		let wo = id + "L";
+		let ni = target.slice(0, wo.length);
+		if ( wo == ni ){
+			return( 1 );
+		}
+	}
+	else{
+		let wo_size = id.length;
+		let ni_size = target.length;
+		if ( (wo_size + 2 ) != ni_size ){
+			return( 0 );
+		}
+		let wo = "P" + id.slice(1, wo_size);
+		let ni = target.slice(0, wo_size);
+		if ( wo == ni ){
+			return( 1 );
+		}
+	}
+
+	return( 0 );
+}
+
+/*
+	展開を遅延させるIDを格納する
+	親メニューは先頭がP、明細行はM
+*/
+function loadHideID( id )
+{
+	let pos = 0;
+	hideCnt = 0;
+
+    let body = document.getElementById(id).outerHTML;
+	pos = body.indexOf('id="', 0);
+	while (pos >= 0){
+		let last = body.indexOf('"', pos+4);
+		if ( last > 0 ){
+			let ni = body.slice(pos+4, last);
+// console.log(id, ni, pos, last);
+			if ( isHideID(id, ni) && hideCnt < 256 ){
+				hideID[hideCnt] = ni;
+				hideCnt++;
+			}
+		}
+		pos = body.indexOf('id="', last);
+	}
+}
+
 function device()
 {
 	var ua = navigator.userAgent;
@@ -60,7 +149,10 @@ function device()
 	}
 	return 'desktop';
 }
-
+/*
+			var window_w = window.innerWidth;
+			var window_h = window.innerHeight;
+*/
 window.addEventListener('load', function(){
 	wo = device();
 	var width = window.innerWidth;
@@ -108,7 +200,13 @@ window.addEventListener('load', function(){
 			dispMenu(LANG);
 		}
 	}
-
+/*
+	loadHideID("M0102");
+	console.log("cnt=", hideCnt);
+	for (var i = 0; i < hideCnt; i++){ 
+		console.log("[",i,"][ ", hideID[i], "]");
+	}
+*/
 });
 
 // 漢字と読みの切り換え
@@ -185,9 +283,34 @@ function youOpen(me, you) {
     let obj = document.getElementById(you).style;
     if (obj.display=="none") {
 		// 閉->開
-        obj.display = "block";
+		if ( singleMenu > 1 ){
+			var i;
+			const window_h = window.innerHeight;
+			loadHideID( you );
+			for ( i = 0; i < hideCnt; i++ ){
+				onHide( hideID[i] );
+			}
+        	obj.display = "block";
+			for ( i = 0; i < hideCnt; i++ ){
+				const par = hideID[i];
+
+				setTimeout(offHide, 1000, par);
+
+				const top1 = document.getElementById( par ).getBoundingClientRect().top;
+				if ( top1 > window_h ){
+					break;
+				}
+
+			}
+			for ( ; i < hideCnt; i++ ){
+				offHide( hideID[i] );
+			}
+		}
+		else{
+        	obj.display = "block";
+		}
 		txt = contents.replace("offM", "onM");
-		if (singleMenu == 1){
+		if (singleMenu > 0){
 			addID(me,you);
 		}
 		status = 1;
@@ -196,7 +319,7 @@ function youOpen(me, you) {
 		// 開->閉
         obj.display = "none" ;
 		txt = contents.replace("onM", "offM");
-		if (singleMenu == 1){
+		if (singleMenu > 0){
 			delID(me,you);
 		}
 		status = -1;
@@ -204,6 +327,7 @@ function youOpen(me, you) {
 	document.getElementById(me).outerHTML = txt;
 	return( status );
 }
+
 /*
 	P0101ならP01*
 	P010201ならP0102*
@@ -248,9 +372,10 @@ function menuClose(me)
 
 function scoreOpen(me, fname, par) {
 	let day = Date.now();
+	day = Math.trunc(day /8000);
 	var path = ".\\post1\\" + fname + ".HTML";
-//	window.open(path + "?" + par, "???ѕ\");
-	window.open(path + "?" + par + "?" + day, "成績表");
+//	window.open(path + "?" + par + "?" + day, "成績表");
+	window.open(path + "?" + par + "?" + LANG + "?" + day, "成績表");
 }
 
 function onPush(){
@@ -270,17 +395,17 @@ function offPush(me, fname, par){
 	if ( bSwap == false ){
 		if ( par ){
 			let day = Date.now();
-			day = Math.trunc(day /1000);
+			day = Math.trunc(day /8000);
 			var path = ".\\post1\\" + fname + ".HTML";
-			window.open(path + "?" + par + "?" + day, "成績表");
+			window.open(path + "?" + par + "?" + LANG + "?" + day, "成績表");
 		}
 		else{
-			if ( singleMenu == 1 ){
+			if ( singleMenu > 0 ){
 				const top1 = document.getElementById(me).getBoundingClientRect().top;
 				menuClose(me);
-				youOpen(me, fname);
 				const top2 = document.getElementById(me).getBoundingClientRect().top;
 				window.scrollBy({top: top2 - top1,left: 0,	behavior: 'smooth'});
+				youOpen(me, fname);
 			}
 			else{
 				youOpen(me, fname);
@@ -295,24 +420,20 @@ function offPush(me, fname, par){
 function do_next( type )
 {
 	if ( type == 0 ){
-		window.open("about:blank","_self").close();
+		window.close();
 		return;
 	}
-/*
-	var par = window.location.href;
-	if ( type == 1 ){
-		var path = par.replace("post2", "post1");
-		window.open(path, "???ѕ\");
-		window.open("about:blank","_self").close();
-		return;
+	if ( type == 3 ){
+		var path = getCookie(parID);
+		if ( path != "" ){
+//	console.log("[" + path + "]");
+			let day = Date.now();
+			day = Math.trunc(day /8000);
+			let ary = path.split("?");
+			path = path.replace(ary[3], day);
+			window.open(".\\post1\\" + path, "成績表");
+		}
 	}
-	if ( type == 2 ){
-		var path = par.replace("post1", "post2");
-		window.open(path, "?̓_?ڍﾗ");
-		window.open("about:blank","_self").close();
-		return;
-	}
-*/
 }
 
 function do_UpScale(id)
@@ -484,3 +605,4 @@ function getCookieDays(name) {
   // この関数は、クッキーの作成時に有効期限を取得するために使用されます。
   // 必要に応じて実装を追加してください。
 }
+
