@@ -256,7 +256,9 @@ function do_next( type )
 	}
 	*/
 	if ( type ){
-		var path = type + "?" + "0" + "?" + myLANG;
+		let day = Date.now();
+		day = Math.trunc(day /8000);
+		var path = type + "?" + "0" + "?" + myLANG + "?" + day;
 		window.open(path, "進行状況");
 //		window.close();
 		return;
