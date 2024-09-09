@@ -106,6 +106,8 @@ console.log("<" + url + ">");
     /* パラメータの受け取り */
     if ( document.location.search ) {
 		var bShow = true;
+		var posEND = -1;
+		
 		par = window.location.href.split('/').pop();
 //console.log("par=" + par);
 		let parAry = par.split('?');
@@ -125,6 +127,10 @@ console.log("<" + url + ">");
 				if ((pos2Td - pos1Td) < 6) {
 					bShow = false;
 				}
+				
+				var top = text.slice(pos1Td + 4, pos2Td -1);
+				posEND = top.lastIndexOf("終了】");
+				
 	            var before = text.slice(0, posTr -1);
 	            var after = text.slice(posTr + 4, text.length);
 	            var result = before + "<tr id='woLine' scope='wo'>" + after;
@@ -146,7 +152,7 @@ console.log("<" + url + ">");
 		}
 		if ( bShow ){
 			var myp = document.getElementById(myLANG + "01");
-			if ( myp ) {
+			if ( myp && posEND < 0 ) {
 		        var text = myp.outerHTML;
 				text = text.replace(' hidden="">', ' class="flowing">');
 	            myp.outerHTML = text;
