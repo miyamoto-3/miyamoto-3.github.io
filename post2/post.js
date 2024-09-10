@@ -106,7 +106,6 @@ console.log("<" + url + ">");
     /* パラメータの受け取り */
     if ( document.location.search ) {
 		var bShow = true;
-		var posEND = -1;
 		
 		par = window.location.href.split('/').pop();
 //console.log("par=" + par);
@@ -127,11 +126,11 @@ console.log("<" + url + ">");
 				if ((pos2Td - pos1Td) < 6) {
 					bShow = false;
 				}
+				if ( text.IndexOf("終了】",pos1Td + 4, pos2Td) >= 0 ){
+					bShow = false;
+				}
 				
-				var top = text.slice(pos1Td + 4, pos2Td -1);
-				posEND = top.lastIndexOf("終了】");
-				
-	            var before = text.slice(0, posTr -1);
+	            var before = text.slice(0, posTr);
 	            var after = text.slice(posTr + 4, text.length);
 	            var result = before + "<tr id='woLine' scope='wo'>" + after;
 	            tbl.innerHTML = result;
@@ -151,13 +150,8 @@ console.log("<" + url + ">");
 			}
 		}
 		if ( bShow ){
+			// 表彰or競技開始の集合案内
 			var myp = document.getElementById(myLANG + "01");
-			if ( myp && posEND < 0 ) {
-		        var text = myp.outerHTML;
-				text = text.replace(' hidden="">', ' class="flowing">');
-	            myp.outerHTML = text;
-		    }
-			myp = document.getElementById(myLANG + "03");
 			if ( myp ) {
 		        var text = myp.outerHTML;
 				text = text.replace(' hidden="">', ' class="flowing">');
@@ -166,19 +160,41 @@ console.log("<" + url + ">");
 		}
 	}
 
+	// topのボタン
 	var myp = document.getElementById(myLANG + "02");
 	if ( myp ) {
         var text = myp.outerHTML;
 		text = text.replace(' hidden=""', '');
         myp.outerHTML = text;
     }
+   	// 進行状況のガイド
+	myp = document.getElementById(myLANG + "03");
+	if ( myp ) {
+        var text = myp.outerHTML;
+		text = text.replace(' hidden="">', ' class="flowing">');
+        myp.outerHTML = text;
+    }
 	myp = document.getElementById("htmlPar");
 	if ( myp ) {
     	var text = myp.innerHTML;
-		var pos = text.indexOf("reload=on");
+		var pos = text.indexOf("reload=");
 		if ( pos >= 0 ){
+			pos += 7;
+			var pos2 = text.indexOf("?", pos);
+			if ( pos2 < 0 ){
+				pos2 = text.length;
+			}
+			var mss;
+			var ss = text.slice(pos, pos2);
+			if ( isNaN(ss) )
+				mss = 60 * 1000;
+			else
+				mss = Number(ss) * 1000;
+
+//			console.log("[" + ss + "|" + mss + "]");	
+			
 		    // ページロード完了後, 60 秒後 (60000 ミリ秒後) にリロード
-		    setTimeout(doReload, 60000);
+		    setTimeout(doReload, mss);
 		}
 		pos = text.indexOf("title=on");
 		if ( pos >= 0 ){
