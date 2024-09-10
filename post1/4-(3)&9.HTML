@@ -5,7 +5,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>競技進行表</title>
+  <title>成績表</title>
   <link rel="stylesheet" href="post.css?ver=2.54">
 </head>
 
@@ -13,9 +13,9 @@
 <header class="fix_part">
 <Input type="button" onClick="javascript:do_next(0);" value="◄" class="batsu">
 <Input type="button" onClick="javascript:skip_wo();" value="↓" class="batsu">
-<Input type="button" onClick="javascript:do_next('NOW4.HTML');" value="進行状況" id="JP02" class="batsu" hidden="">
-<Input type="button" onClick="javascript:do_next('NOW4.HTML');" value="比賽進度" id="CH02" class="batsu" hidden="">
-<Input type="button" onClick="javascript:do_next('NOW4.HTML');" value="Competition progress" id="EN02" class="batsu" hidden="">
+<Input type="button" onClick="javascript:do_next(2);" value="詳細表示" id="JP02" class="batsu" hidden="">
+<Input type="button" onClick="javascript:do_next(2);" value="詳細展示" id="CH02" class="batsu" hidden="">
+<Input type="button" onClick="javascript:do_next(2);" value="Show details" id="EN02" class="batsu" hidden="">
 <Input type="button" onClick="javascript:parSave();" value="☆" class="batsu" id="siori" hidden="">
 </header>
 <p class="padding">　</p>
@@ -30,350 +30,39 @@
 <tr>
   <td>第４コート</td>
   <td>（３）</td>
-  <td>&emsp;&emsp;</td>
-  <td><mark>０９：４６→０９：４７</mark> 開始予定</td>
 </tr>
 </div>
 <table>
 <caption>
-伝統拳術Ｃ
+伝統拳術Ｃ　男子Ｅ
 </caption>
 <!-- ---------------------------------------------------- -->
 
 <thead>
 <tr scope='col'>
-    <th>組</th>
-    <th>番</th>
+    <th>順位</th>
     <th>氏名</th>
-    <th>性</th>
-    <th>歳</th>
     <th>所属団体名</th>
+    <th>最終得点</th>
+    <th>備考</th>
   </tr>
 </thead>
 <tbody>
 
   <tr>
-    <td>１<br/><small>(09:47～)</small></td>
-    <td>a</td>
-    <td>承 嫣宇</td>
-    <td>女</td>
-    <td>A</td>
-    <td>廖峰忽雷太極拳研究会<trid>1a</trid></td>
-  </tr>
-
-  <tr>
-    <td>１<br/><small>(09:47～)</small></td>
-    <td>b</td>
-    <td>服部 恒泰</td>
-    <td>男</td>
-    <td>A</td>
-    <td>蓮花太極拳ｸﾗﾌﾞ<trid>1b</trid></td>
-  </tr>
-
-  <tr>
-    <td>１<br/><small>(09:47～)</small></td>
-    <td>c</td>
-    <td>劉 軒</td>
-    <td>男</td>
-    <td>A</td>
-    <td>廖峰忽雷太極拳研究会<trid>1c</trid></td>
-  </tr>
-
-  <tr>
-    <td>１<br/><small>(09:47～)</small></td>
-    <td>d</td>
-    <td>Hu Shaun</td>
-    <td>男</td>
-    <td>A</td>
-    <td>少林武術中心USA<trid>1d</trid></td>
-  </tr>
-
-  <tr>
-    <td>２<br/><small>(09:51～)</small></td>
-    <td>a</td>
-    <td>津田 紬希</td>
-    <td>女</td>
-    <td>A</td>
-    <td>飛凰会<trid>2a</trid></td>
-  </tr>
-
-  <tr>
-    <td>２<br/><small>(09:51～)</small></td>
-    <td>b</td>
-    <td>Young Nola</td>
-    <td>女</td>
-    <td>A</td>
-    <td>少林武術中心USA<trid>2b</trid></td>
-  </tr>
-
-  <tr>
-    <td>２<br/><small>(09:51～)</small></td>
-    <td>c</td>
-    <td>Dong Authur</td>
-    <td>男</td>
-    <td>B</td>
-    <td>少林武術中心USA<trid>2c</trid></td>
-  </tr>
-
-  <tr>
-    <td>２<br/><small>(09:51～)</small></td>
-    <td>d</td>
-    <td>Dagang Liam</td>
-    <td>男</td>
-    <td>B</td>
-    <td>少林武術中心USA<trid>2d</trid></td>
-  </tr>
-
-  <tr>
-    <td>３<br/><small>(09:55～)</small></td>
-    <td>a</td>
-    <td>小川  瑞花</td>
-    <td>女</td>
-    <td>B</td>
-    <td>共立女子中学高等学校 太極拳部<trid>3a</trid></td>
-  </tr>
-
-  <tr>
-    <td>４<br/><small>(09:59～)</small></td>
-    <td>a</td>
-    <td>佐久間 華怜</td>
-    <td>女</td>
-    <td>B</td>
-    <td>共立女子中学高等学校 太極拳部<trid>4a</trid></td>
-  </tr>
-
-  <tr>
-    <td>５<br/><small>(10:03～)</small></td>
-    <td>a</td>
-    <td>鈴木 楓</td>
-    <td>女</td>
-    <td>B</td>
-    <td>共立女子中学高等学校 太極拳部<trid>5a</trid></td>
-  </tr>
-
-  <tr>
-    <td>６<br/><small>(10:07～)</small></td>
-    <td>a</td>
-    <td>鈴木 花果</td>
-    <td>女</td>
-    <td>B</td>
-    <td>共立女子中学高等学校 太極拳部<trid>6a</trid></td>
-  </tr>
-
-  <tr>
-    <td>７<br/><small>(10:11～)</small></td>
-    <td>a</td>
-    <td>福岡  加帆</td>
-    <td>女</td>
-    <td>B</td>
-    <td>共立女子中学高等学校 太極拳部<trid>7a</trid></td>
-  </tr>
-
-  <tr>
-    <td>８<br/><small>(10:15～)</small></td>
-    <td>a</td>
-    <td>吉儀 日向子</td>
-    <td>女</td>
-    <td>B</td>
-    <td>共立女子中学高等学校 太極拳部<trid>8a</trid></td>
-  </tr>
-
-  <tr>
-    <td>９<br/><small>(10:19～)</small></td>
-    <td>a</td>
-    <td>笹本 全</td>
-    <td>男</td>
-    <td>B</td>
-    <td>横浜武術院<trid>9a</trid></td>
-  </tr>
-
-  <tr>
-    <td>９<br/><small>(10:19～)</small></td>
-    <td>b</td>
-    <td>今井 政貴</td>
-    <td>男</td>
-    <td>C</td>
-    <td>個人<trid>9b</trid></td>
-  </tr>
-
-  <tr>
-    <td>９<br/><small>(10:19～)</small></td>
-    <td>c</td>
-    <td>髙木 爽太</td>
-    <td>男</td>
-    <td>C</td>
-    <td>横浜武術院<trid>9c</trid></td>
-  </tr>
-
-  <tr>
-    <td>１０<br/><small>(10:23～)</small></td>
-    <td>a</td>
-    <td>景山 恵理</td>
-    <td>女</td>
-    <td>C</td>
-    <td>武劇零<trid>10a</trid></td>
-  </tr>
-
-  <tr>
-    <td>１０<br/><small>(10:23～)</small></td>
-    <td>b</td>
-    <td>藤田 真代</td>
-    <td>女</td>
-    <td>C</td>
-    <td>横浜武術院<trid>10b</trid></td>
-  </tr>
-
-  <tr>
-    <td>１１<br/><small>(10:27～)</small></td>
-    <td>a</td>
-    <td>高鳥 里奈</td>
-    <td>女</td>
-    <td>C</td>
-    <td>横浜武術院<trid>11a</trid></td>
-  </tr>
-
-  <tr>
-    <td>１１<br/><small>(10:27～)</small></td>
-    <td>b</td>
-    <td>Douangprachanh Michel</td>
-    <td>男</td>
-    <td>C</td>
-    <td>横浜武術院<trid>11b</trid></td>
-  </tr>
-
-  <tr>
-    <td>１１<br/><small>(10:27～)</small></td>
-    <td>c</td>
-    <td>Seablom Curt</td>
-    <td>男</td>
-    <td>D</td>
-    <td>少林武術中心USA<trid>11c</trid></td>
-  </tr>
-
-  <tr>
-    <td>１２<br/><small>(10:31～)</small></td>
-    <td>a</td>
-    <td>佐渡 正城</td>
-    <td>男</td>
-    <td>D</td>
-    <td>太極道混元会<trid>12a</trid></td>
-  </tr>
-
-  <tr>
-    <td>１２<br/><small>(10:31～)</small></td>
-    <td>b</td>
-    <td>周 志文</td>
-    <td>男</td>
-    <td>E</td>
-    <td>香港太極耆縁養生会<trid>12b</trid></td>
-  </tr>
-
-  <tr>
-    <td>１３<br/><small>(10:35～)</small></td>
-    <td>a</td>
-    <td>Suriyasat Lisa</td>
-    <td>女</td>
-    <td>D</td>
-    <td>少林武術中心USA<trid>13a</trid></td>
-  </tr>
-
-  <tr>
-    <td>１４<br/><small>(10:49～)</small></td>
-    <td>a</td>
-    <td>鈴木 丈洋</td>
-    <td>男</td>
-    <td>D</td>
-    <td>飛凰会<trid>14a</trid></td>
-  </tr>
-
-  <tr>
-    <td>１５<br/><small>(10:47～)</small></td>
-    <td>a</td>
-    <td>古屋 哲</td>
-    <td>男</td>
-    <td>D</td>
-    <td>個人<trid>15a</trid></td>
-  </tr>
-
-  <tr>
-    <td>１５<br/><small>(10:47～)</small></td>
-    <td>b</td>
-    <td>丹羽 悠介</td>
-    <td>男</td>
-    <td>D</td>
-    <td>武劇零<trid>15b</trid></td>
-  </tr>
-
-  <tr>
-    <td>１６<br/><small>(10:51～)</small></td>
-    <td>a</td>
-    <td>藤川 愛</td>
-    <td>女</td>
-    <td>D</td>
-    <td>横浜武術院<trid>16a</trid></td>
-  </tr>
-
-  <tr>
-    <td>１７<br/><small>(10:55～)</small></td>
-    <td>a</td>
-    <td>大谷 祥子</td>
-    <td>女</td>
-    <td>C</td>
-    <td>武劇零<trid>17a</trid></td>
-  </tr>
-
-  <tr>
-    <td>１８<br/><small>(10:59～)</small></td>
-    <td>a</td>
-    <td>中川 早紀</td>
-    <td>女</td>
-    <td>D</td>
-    <td>横浜武術院<trid>18a</trid></td>
-  </tr>
-
-  <tr>
-    <td>１９<br/><small>(11:03～)</small></td>
-    <td>a</td>
-    <td>橋本 きらら</td>
-    <td>女</td>
-    <td>D</td>
-    <td>横浜武術院<trid>19a</trid></td>
-  </tr>
-
-  <tr>
-    <td>２０<br/><small>(11:07～)</small></td>
-    <td>a</td>
-    <td>瀬戸 信介</td>
-    <td>男</td>
-    <td>D</td>
-    <td>横浜武術院<trid>20a</trid></td>
-  </tr>
-
-  <tr>
-    <td>２１<br/><small>(11:11～)</small></td>
-    <td>a</td>
-    <td>Bridge Aaron David</td>
-    <td>男</td>
-    <td>D</td>
-    <td>個人(ｲｷﾞﾘｽ)<trid>21a</trid></td>
-  </tr>
-
-  <tr>
-    <td>２１<br/><small>(11:11～)</small></td>
-    <td>b</td>
-    <td>丸岡 一弘</td>
-    <td>男</td>
-    <td>D</td>
-    <td>個人<trid>21b</trid></td>
-  </tr>
-
-  <tr>
-    <td>２２<br/><small>(11:15～)</small></td>
-    <td>a</td>
+    <td>１位</td>
     <td>東 俊明</td>
-    <td>男</td>
-    <td>E</td>
-    <td>鳳游会<trid>22a</trid></td>
+    <td>鳳游会</td>
+    <td>8.520</td>
+    <td><trid>22a</trid></td>
+  </tr>
+
+  <tr>
+    <td>２位</td>
+    <td>周 志文</td>
+    <td>香港太極耆縁養生会</td>
+    <td>8.380</td>
+    <td><span style="color:#FF0000">一人で競技</span><trid>12b</trid></td>
   </tr>
 
 <!-- ---------------------------------------------------- -->
@@ -382,11 +71,11 @@
 <script src="post.js?ver=2.54"></script>
 </body>
 <footer>
-<small>2024/09/07 5:41:33</small>
+<small>2024/09/06 16:07:50</small>
 <p class="padding">　</p>
-<p id="JP01" hidden=""><span>※個人競技の参加者は２０分前に<a href="recept.png" target="_blank">地下一回受付</a>へ集合</span></p>
-<p id="CH01" hidden=""><span>※個人賽參賽者須於２０分鐘前在<a href="recept.png" target="_blank">地下一層接待處</a>集合</span></p>
-<p id="EN01" hidden=""><span>※Individual competition participants must gather at the  <a href="recept.png" target="_blank">reception desk on the first basement floor</a> by 20 minutes ago</span></p>
+<p id="JP01" hidden=""><span>※入賞者は[<mark>11:55</mark>]に<a href="meet.png" target="_blank">表彰者待機場</a>へ集合</span></p>
+<p id="CH01" hidden=""><span>※得奖者在<a href="meet.png" target="_blank">表彰的人待机场</a>对[<mark>11:55</mark>]集合</span></p>
+<p id="EN01" hidden=""><span>※Winners will gather at the award <a href="meet.png" target="_blank">recipient waiting area</a> at [<mark>11:55</mark>]</span></p>
 </footer>
 </html>
 

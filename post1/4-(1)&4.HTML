@@ -5,7 +5,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>競技進行表</title>
+  <title>成績表</title>
   <link rel="stylesheet" href="post.css?ver=2.54">
 </head>
 
@@ -13,9 +13,9 @@
 <header class="fix_part">
 <Input type="button" onClick="javascript:do_next(0);" value="◄" class="batsu">
 <Input type="button" onClick="javascript:skip_wo();" value="↓" class="batsu">
-<Input type="button" onClick="javascript:do_next('NOW4.HTML');" value="進行状況" id="JP02" class="batsu" hidden="">
-<Input type="button" onClick="javascript:do_next('NOW4.HTML');" value="比賽進度" id="CH02" class="batsu" hidden="">
-<Input type="button" onClick="javascript:do_next('NOW4.HTML');" value="Competition progress" id="EN02" class="batsu" hidden="">
+<Input type="button" onClick="javascript:do_next(2);" value="詳細表示" id="JP02" class="batsu" hidden="">
+<Input type="button" onClick="javascript:do_next(2);" value="詳細展示" id="CH02" class="batsu" hidden="">
+<Input type="button" onClick="javascript:do_next(2);" value="Show details" id="EN02" class="batsu" hidden="">
 <Input type="button" onClick="javascript:parSave();" value="☆" class="batsu" id="siori" hidden="">
 </header>
 <p class="padding">　</p>
@@ -30,152 +30,55 @@
 <tr>
   <td>第４コート</td>
   <td>（１）</td>
-  <td>&emsp;&emsp;</td>
-  <td><mark>０８：５０</mark> 開始予定</td>
 </tr>
 </div>
 <table>
 <caption>
-形意拳
+八卦掌　女子
 </caption>
 <!-- ---------------------------------------------------- -->
 
 <thead>
 <tr scope='col'>
-    <th>組</th>
-    <th>番</th>
+    <th>順位</th>
     <th>氏名</th>
-    <th>性</th>
-    <th>歳</th>
     <th>所属団体名</th>
+    <th>最終得点</th>
+    <th>備考</th>
   </tr>
 </thead>
 <tbody>
 
   <tr>
-    <td>１<br/><small>(08:50～)</small></td>
-    <td>a</td>
-    <td>王 健</td>
-    <td>女</td>
-    <td>D</td>
-    <td>中国上海金友武悦隊<trid>1a</trid></td>
-  </tr>
-
-  <tr>
-    <td>１<br/><small>(08:50～)</small></td>
-    <td>b</td>
-    <td>南波 明子</td>
-    <td>女</td>
-    <td>D</td>
-    <td>個人<trid>1b</trid></td>
-  </tr>
-
-  <tr>
-    <td>２<br/><small>(08:54～)</small></td>
-    <td>a</td>
-    <td>蔡 欣成</td>
-    <td>男</td>
-    <td>C</td>
-    <td>中国上海金友武悦隊<trid>2a</trid></td>
-  </tr>
-
-  <tr>
-    <td>２<br/><small>(08:54～)</small></td>
-    <td>b</td>
-    <td>伊藤 久恵</td>
-    <td>女</td>
-    <td>D</td>
-    <td>大陸武術協会<trid>2b</trid></td>
-  </tr>
-
-  <tr>
-    <td>３<br/><small>(08:58～)</small></td>
-    <td>a</td>
-    <td>杉井 彰円</td>
-    <td>男</td>
-    <td>C</td>
-    <td>鳳游会<trid>3a</trid></td>
-  </tr>
-
-  <tr>
-    <td>３<br/><small>(08:58～)</small></td>
-    <td>b</td>
-    <td>孫 志虎</td>
-    <td>男</td>
-    <td>D</td>
-    <td>西安永年楊氏太極拳学会<trid>3b</trid></td>
-  </tr>
-
-  <tr>
-    <td>４<br/><small>(09:02～)</small></td>
-    <td>a</td>
-    <td>喜多 忍</td>
-    <td>男</td>
-    <td>D</td>
-    <td>喜多武術培訓中心<trid>4a</trid></td>
-  </tr>
-
-  <tr>
-    <td>４<br/><small>(09:02～)</small></td>
-    <td>b</td>
-    <td>江原 章浩</td>
-    <td>男</td>
-    <td>D</td>
-    <td>個人<trid>4b</trid></td>
-  </tr>
-
-  <tr>
-    <td>５<br/><small>(09:06～)</small></td>
-    <td>a</td>
-    <td>田路 幸子</td>
-    <td>女</td>
-    <td>D</td>
-    <td>大陸武術協会<trid>5a</trid></td>
-  </tr>
-
-  <tr>
-    <td>６<br/><small>(09:10～)</small></td>
-    <td>a</td>
-    <td>奥隅 千賀子</td>
-    <td>女</td>
-    <td>D</td>
-    <td>鳳游会<trid>6a</trid></td>
-  </tr>
-
-  <tr>
-    <td>７<br/><small>(09:14～)</small></td>
-    <td>a</td>
-    <td>山口 祐子</td>
-    <td>女</td>
-    <td>D</td>
-    <td>鳳游会<trid>7a</trid></td>
-  </tr>
-
-  <tr>
-    <td>８<br/><small>(09:18～)</small></td>
-    <td>a</td>
+    <td>１位</td>
     <td>廣野 繭子</td>
-    <td>女</td>
-    <td>D</td>
-    <td>日本太極養生道協会<trid>8a</trid></td>
+    <td>日本太極養生道協会</td>
+    <td>8.480</td>
+    <td><trid>8a</trid></td>
   </tr>
 
   <tr>
-    <td>９<br/><small>(09:22～)</small></td>
-    <td>a</td>
-    <td>大高 一彦</td>
-    <td>男</td>
-    <td>E</td>
-    <td>鳳游会<trid>9a</trid></td>
+    <td>２位</td>
+    <td>山口 祐子</td>
+    <td>鳳游会</td>
+    <td>8.410</td>
+    <td><trid>7a</trid></td>
   </tr>
 
   <tr>
-    <td>１０<br/><small>(09:26～)</small></td>
-    <td>a</td>
-    <td>岩井 容謹</td>
-    <td>男</td>
-    <td>D</td>
-    <td>やわらぎ会<trid>10a</trid></td>
+    <td>３位</td>
+    <td>奥隅 千賀子</td>
+    <td>鳳游会</td>
+    <td>8.410</td>
+    <td><trid>6a</trid></td>
+  </tr>
+
+  <tr>
+    <td>４位</td>
+    <td>田路 幸子</td>
+    <td>大陸武術協会</td>
+    <td>8.390</td>
+    <td><trid>5a</trid></td>
   </tr>
 
 <!-- ---------------------------------------------------- -->
@@ -184,11 +87,11 @@
 <script src="post.js?ver=2.54"></script>
 </body>
 <footer>
-<small>2024/09/07 5:41:32</small>
+<small>2024/09/06 16:07:49</small>
 <p class="padding">　</p>
-<p id="JP01" hidden=""><span>※個人競技の参加者は２０分前に<a href="recept.png" target="_blank">地下一回受付</a>へ集合</span></p>
-<p id="CH01" hidden=""><span>※個人賽參賽者須於２０分鐘前在<a href="recept.png" target="_blank">地下一層接待處</a>集合</span></p>
-<p id="EN01" hidden=""><span>※Individual competition participants must gather at the  <a href="recept.png" target="_blank">reception desk on the first basement floor</a> by 20 minutes ago</span></p>
+<p id="JP01" hidden=""><span>※入賞者は[<mark>09:45</mark>]に<a href="meet.png" target="_blank">表彰者待機場</a>へ集合</span></p>
+<p id="CH01" hidden=""><span>※得奖者在<a href="meet.png" target="_blank">表彰的人待机场</a>对[<mark>09:45</mark>]集合</span></p>
+<p id="EN01" hidden=""><span>※Winners will gather at the award <a href="meet.png" target="_blank">recipient waiting area</a> at [<mark>09:45</mark>]</span></p>
 </footer>
 </html>
 
