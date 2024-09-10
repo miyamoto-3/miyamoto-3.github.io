@@ -1,5 +1,5 @@
 let myName = "";
-let myID = "";
+let myID = "0";
 let myLANG = "JP";
 let myYYYY = 0;
 let myMM = 0;
@@ -290,7 +290,7 @@ function do_next( type )
 	if ( type ){
 		let day = Date.now();
 		day = Math.trunc(day /8000);
-		var path = type + "?" + "0" + "?" + myLANG + "?" + day;
+		var path = type + "?" + myID + "?" + myLANG + "?" + day;
 		window.open(path, "進行状況");
 //		window.close();
 		return;
