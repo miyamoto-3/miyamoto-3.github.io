@@ -130,7 +130,7 @@ console.log("<" + url + ">");
 					bShow = false;
 				}
 				
-	            var before = text.slice(0, posTr + 1);
+	            var before = text.slice(0, posTr - 1);
 	            var after = text.slice(posTr + 4, text.length);
 	            var result = before + "<tr id='woLine' scope='wo'>" + after;
 	            tbl.innerHTML = result;
