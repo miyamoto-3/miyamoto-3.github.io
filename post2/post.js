@@ -126,7 +126,7 @@ console.log("<" + url + ">");
 				if ((pos2Td - pos1Td) < 6) {
 					bShow = false;
 				}
-				if ( text.IndexOf("終了】",pos1Td + 4, pos2Td) >= 0 ){
+				if ( text.indexOf("終了】",pos1Td + 4, pos2Td) >= 0 ){
 					bShow = false;
 				}
 				
