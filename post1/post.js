@@ -126,11 +126,11 @@ console.log("<" + url + ">");
 				if ((pos2Td - pos1Td) < 6) {
 					bShow = false;
 				}
-				if ( text.IndexOf("終了】",pos1Td + 4, pos2Td) >= 0 ){
+				if ( text.indexOf("終了】",pos1Td + 4, pos2Td) >= 0 ){
 					bShow = false;
 				}
 				
-	            var before = text.slice(0, posTr - 1);
+	            var before = text.slice(0, posTr);
 	            var after = text.slice(posTr + 4, text.length);
 	            var result = before + "<tr id='woLine' scope='wo'>" + after;
 	            tbl.innerHTML = result;
