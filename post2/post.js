@@ -114,7 +114,17 @@ console.log("<" + url + ">");
         myID = parAry[1];
 		myLANG = parAry[2];
 
-	    if ( myID != '0' ){
+		if ( myID == '0' ){
+	        let tbl = document.querySelector('tbody');
+	        var text = tbl.innerHTML;
+            var posTr = text.lastIndexOf('<tr>', text.length);
+			var pos1Td = text.indexOf('<td>', posTr);
+			var pos2Td = text.indexOf('</td>', posTr);
+			if ( text.indexOf("終了】",pos1Td + 4, pos2Td) >= 0 ){
+				bShow = false;
+			}
+		}
+		else{
 	        let tbl = document.querySelector('tbody');
 	        var text = tbl.innerHTML;
 	        var myTAG = '<trid>' + myID + '</trid>';
