@@ -1,9 +1,11 @@
 let myName = "";
 let myID = "0";
+let myAryID = "0"
 let myLANG = "JP";
 let myYYYY = 0;
 let myMM = 0;
 let myDD = 0;
+let myTitle = "";
 
 const parID = "myPar";
 let par = "";
@@ -103,16 +105,24 @@ window.addEventListener('load', function(){
 let url = window.location.href;
 console.log("<" + url + ">");
 */
+	let ttl = document.querySelector("title");
+	if ( ttl ){
+		myTitle = ttl.innerHTML;
+	}
+
     /* パラメータの受け取り */
     if ( document.location.search ) {
 		var bShow = true;
-		
+
 		par = window.location.href.split('/').pop();
-//console.log("par=" + par);
 		let parAry = par.split('?');
 		myName = parAry[0];
-        myID = parAry[1];
+//      myID = parAry[1];
+		myAryID = parAry[1].split(':');
+        myID = myAryID[0];
 		myLANG = parAry[2];
+
+// console.log("[ID=" + myID + "][" + parAry[1] + "][" + myAryID.length + "]");
 
 		if ( myID == '0' ){
 	        let tbl = document.querySelector('tbody');
@@ -124,7 +134,41 @@ console.log("<" + url + ">");
 				bShow = false;
 			}
 		}
-		else{
+		if ( myID == '0' && myAryID.length >= 2 && myTitle == '競技進行表' ){
+	        let tbl = document.querySelector('tbody');
+	        var text = tbl.innerHTML;
+	        var cnt = 0;
+            var posTr = text.indexOf('<tr>');
+            while (posTr > 0){
+				var pos1ID = text.indexOf('<trid>', posTr + 4);
+				var pos2ID = text.indexOf('</trid>', pos1ID + 6);
+				var trID = text.slice(pos1ID+6,pos2ID);
+				for (var i = 1; i < myAryID.length; i++ ){
+					if ( myAryID[i] == trID ){
+						break;
+					}
+				}
+			    var before = text.slice(0, posTr);
+            	var after = text.slice(posTr + 4, text.length);
+				if ( i < myAryID.length ){	// 表示対象のIDではない
+	            	if ( cnt == 0 ){
+            			text = before + "<tr id='woLine' class='visible'>" + after;
+					}
+					else{
+            			text = before + "<tr class='visible'>" + after;
+            		}
+            		cnt++;
+				}
+				/*
+				else{
+           			text = before + "<tr class='invisible'>" + after;
+				}
+				*/
+				posTr = text.indexOf('<tr>', posTr + 4);
+			}
+            tbl.innerHTML = text;
+		}
+		if ( myID != '0' && myAryID.length < 2 ){
 	        let tbl = document.querySelector('tbody');
 	        var text = tbl.innerHTML;
 	        var myTAG = '<trid>' + myID + '</trid>';
@@ -145,19 +189,6 @@ console.log("<" + url + ">");
 	            var result = before + "<tr id='woLine' scope='wo'>" + after;
 	            tbl.innerHTML = result;
 			}
-			var myp = document.getElementById("siori");
-			if ( myp ) {
-		        var text = myp.outerHTML;
-				text = text.replace(' hidden=""', '');
-				var par2 = getCookie(parID);
-				if ( par2 != "" ){
-					parAry = par2.split("?");
-					if ( parAry[0] == myName && parAry[1] == myID ){
-						text = text.replace("☆", "★");
-					}
-				}
-		        myp.outerHTML = text;
-			}
 		}
 		if ( bShow ){
 			// 表彰or競技開始の集合案内
@@ -167,6 +198,19 @@ console.log("<" + url + ">");
 				text = text.replace(' hidden="">', ' class="flowing">');
 	            myp.outerHTML = text;
 		    }
+		}
+		var myp = document.getElementById("siori");
+		if ( myp ) {
+	        var text = myp.outerHTML;
+			text = text.replace(' hidden=""', '');
+			var par2 = getCookie(parID);
+			if ( par2 != "" ){
+				parAry = par2.split("?");
+				if ( parAry[0] == myName && parAry[1] == myID ){
+					text = text.replace("☆", "★");
+				}
+			}
+	        myp.outerHTML = text;
 		}
 	}
 

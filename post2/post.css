@@ -26,6 +26,9 @@ body {
 trid {
     display:none;
 }
+trSid {
+    display:none;
+}
 td, th {
     border: 1px solid rgb(190, 190, 190);
     padding: 10px;
@@ -111,4 +114,15 @@ table {
 @keyframes scrollAnime{
 	0% { transform: translateX(0)}
 	100% { transform: translateX(-100%)}
+}
+/* 強調文字 */
+.visible{
+//	color: darkblue;
+	color: mediumblue;
+    font-size:  110%;
+    font-weight: bold;
+}
+/* 薄い文字 */
+.invisible{
+	opacity: 0.4;
 }
