@@ -118,11 +118,15 @@ table {
 /* 強調文字 */
 .visible{
 //	color: darkblue;
-	color: mediumblue;
-    font-size:  110%;
+//  font-size:  110%;
     font-weight: bold;
 }
 /* 薄い文字 */
 .invisible{
-	opacity: 0.4;
+    font-size:  80%;
+	color: rgba(0,0,0,0.4);
+}
+.invisible:hover{
+    font-size:  90%;
+	color: rgba(0,0,0,1);
 }

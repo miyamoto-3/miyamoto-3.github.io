@@ -109,6 +109,7 @@ console.log("<" + url + ">");
 	if ( ttl ){
 		myTitle = ttl.innerHTML;
 	}
+	var woLine = false;
 
     /* パラメータの受け取り */
     if ( document.location.search ) {
@@ -153,17 +154,16 @@ console.log("<" + url + ">");
 				if ( i < myAryID.length ){	// 表示対象のIDではない
 	            	if ( cnt == 0 ){
             			text = before + "<tr id='woLine' class='visible'>" + after;
+            			woLine = true;
 					}
 					else{
             			text = before + "<tr class='visible'>" + after;
             		}
             		cnt++;
 				}
-				/*
 				else{
            			text = before + "<tr class='invisible'>" + after;
 				}
-				*/
 				posTr = text.indexOf('<tr>', posTr + 4);
 			}
             tbl.innerHTML = text;
@@ -188,6 +188,7 @@ console.log("<" + url + ">");
 	            var after = text.slice(posTr + 4, text.length);
 	            var result = before + "<tr id='woLine' scope='wo'>" + after;
 	            tbl.innerHTML = result;
+       			woLine = true;
 			}
 		}
 		if ( bShow ){
@@ -289,6 +290,10 @@ title=Competition progress?reload=on
 		}
 	}
 
+	if ( woLine ){
+		skip_wo();
+	}
+	
 });
 
 function skip_wo()
